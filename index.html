@@ -4,200 +4,476 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sekunet — Repositorio de Plantillas</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /*
-  SISTEMA TIPOGRÁFICO SEKUNET — psicología del color aplicada a la letra
-  ──────────────────────────────────────────────────────────────────────
-  Fuente display:  Syne 800 — geométrica, tecnológica, sin ambigüedad
-  Fuente cuerpo:   DM Sans 300/400 — legible, neutra, profesional
+  SISTEMA TIPOGRÁFICO CROMÁTICO — SEKUNET
+  ─────────────────────────────────────────────────────
+  Fuente display:  Exo 2  — geométrica, angular, tecnológica, futurista
+  Fuente apoyo:    Rajdhani — condensada, técnica, militar-tech
 
-  Color tipográfico por etapa (psicología):
-  · Azul profundo   #1B5AA8  → Apertura     — confianza, primer contacto
-  · Verde esmeralda #1A7A52  → Relevamiento — análisis, escucha activa
-  · Ámbar dorado    #C07B00  → Gestión      — proceso activo, atención
-  · Coral acción    #C24E10  → Resolución   — resultado, urgencia positiva
-  · Índigo orden    #5B3FA8  → Cierre       — conclusión, seguridad
+  PSICOLOGÍA DEL COLOR EN TIPOGRAFÍA (aplicada a TODO el sistema):
+  Apertura     → #1B5AA8  Azul cobalto    Confianza, primer contacto, estabilidad
+  Relevamiento → #0E8A5F  Verde teal      Análisis, precisión, claridad técnica
+  Gestión      → #B87200  Ámbar dorado    Proceso activo, atención, trabajo en curso
+  Resolución   → #C03A10  Coral intenso   Acción, resultado, urgencia positiva
+  Cierre       → #5030A0  Índigo fuerte   Conclusión, orden, seguridad
+  ─────────────────────────────────────────────────────
+  Regla: NO existe texto neutro (gris). Cada texto lleva
+  el color de su etapa o el azul de marca. El negro solo
+  en el cuerpo de la plantilla (contenido del cliente).
 */
+
 :root {
-  --azul:        #1B5AA8;
-  --azul-vivo:   #2472CC;
-  --azul-palido: #C8DEFF;
-  --naranja:     #F5A820;
-  --naranja-d:   #D4820A;
-  --blanco:      #FFFFFF;
-  --gris-bg:     #F4F6FA;
-  --gris-borde:  #E1E7F0;
-  --gris-medio:  #9AAAC4;
-  --negro:       #111828;
+  /* Marca */
+  --azul:   #1B5AA8;
+  --azulv:  #2472CC;
+  --naranja:#F5A820;
+  --naranjaD:#C07800;
 
-  --t-apertura:     #1B5AA8;
-  --t-relevamiento: #1A7A52;
-  --t-gestion:      #C07B00;
-  --t-resolucion:   #C24E10;
-  --t-cierre:       #5B3FA8;
+  /* Colores tipográficos por etapa — TODOS saturados */
+  --A:  #1B5AA8;  /* Apertura */
+  --R:  #0E8A5F;  /* Relevamiento */
+  --G:  #B87200;  /* Gestión */
+  --Re: #C03A10;  /* Resolución */
+  --C:  #5030A0;  /* Cierre */
 
-  --f-apertura:     #EEF4FF;
-  --f-relevamiento: #EDFAF3;
-  --f-gestion:      #FFF8E6;
-  --f-resolucion:   #FFF2EA;
-  --f-cierre:       #F3EEFF;
+  /* Fondos de etapa — tintados, nunca blanco puro */
+  --fA:  #E8F1FF;
+  --fR:  #E3F7EF;
+  --fG:  #FFF5DC;
+  --fRe: #FFF0E8;
+  --fC:  #F0EBFF;
 
-  --fd: 'Syne', sans-serif;
-  --fb: 'DM Sans', sans-serif;
-  --r:  12px;
-  --rl: 18px;
-  --sh: 0 1px 8px rgba(17,24,40,0.07), 0 4px 20px rgba(17,24,40,0.04);
-  --shh: 0 6px 28px rgba(27,90,168,0.16);
+  /* Bordes */
+  --bA:  #9ABDE8;
+  --bR:  #7ACFAD;
+  --bG:  #E8C060;
+  --bRe: #F09070;
+  --bC:  #A888E8;
+
+  /* Estructurales */
+  --bg:    #F2F4F8;
+  --white: #FFFFFF;
+  --border:#DDE3EE;
+  --nero:  #0D1520;  /* Casi negro azulado — solo para cuerpo de plantilla */
+
+  --fd: 'Exo 2', sans-serif;
+  --fr: 'Rajdhani', sans-serif;
+
+  --r: 10px;
+  --rl: 16px;
+  --sh: 0 2px 10px rgba(13,21,32,.07), 0 6px 24px rgba(13,21,32,.04);
+  --shh: 0 8px 32px rgba(27,90,168,.18);
 }
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--fb);background:var(--blanco);color:var(--negro);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:var(--fd);background:var(--white);color:var(--nero);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* ─ HEADER ─ */
-header{background:var(--blanco);border-bottom:1px solid var(--gris-borde);height:68px;padding:0 36px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 1px 12px rgba(17,24,40,0.05)}
+/* ─── HEADER ─────────────────────────────────────── */
+header{
+  background:var(--white);
+  border-bottom:1.5px solid var(--border);
+  height:66px;padding:0 36px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 1px 16px rgba(13,21,32,.06);
+}
 .lw{display:flex;align-items:center;gap:14px}
-.lt{display:flex;flex-direction:column;gap:2px}
-/* Nombre SEKUNET: Syne 800, degradado azul→naranja (marca) */
-.ln{font-family:var(--fd);font-size:21px;font-weight:800;letter-spacing:-0.02em;background:linear-gradient(90deg,#1B5AA8 0%,#2472CC 55%,#F5A820 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-.ls{font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gris-medio);line-height:1}
-.chip{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:20px;font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;background:var(--f-apertura);color:var(--azul);border:1px solid var(--azul-palido)}
 
-/* ─ HERO ─ */
-.hero{padding:52px 36px 44px;background:var(--blanco);border-bottom:1px solid var(--gris-borde);position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 88% 18%,rgba(245,168,32,.09) 0%,transparent 50%),radial-gradient(circle at 12% 82%,rgba(27,90,168,.07) 0%,transparent 50%);pointer-events:none}
-.htag{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--naranja-d)}
-.htag::before{content:'';display:inline-block;width:22px;height:2px;background:var(--naranja);border-radius:2px}
-/* H1: Syne 800 con dos líneas de color diferente */
-.hero h1{font-family:var(--fd);font-size:44px;font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-bottom:16px;max-width:620px;position:relative}
-/* "Plantillas de atención" — azul: confianza, solidez */
-.hl1{display:block;color:var(--azul)}
-/* "listas para usar." — degradado naranja: facilidad, acción */
-.hl2{display:block;background:linear-gradient(90deg,var(--naranja-d) 0%,var(--naranja) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{font-size:15px;font-weight:300;color:var(--gris-medio);line-height:1.72;max-width:500px;position:relative}
+/* Logotipo: Exo 2 900, degradado azul→azulvivo→naranja */
+.lname{
+  font-family:var(--fd);font-size:22px;font-weight:900;
+  letter-spacing:0.06em;
+  background:linear-gradient(90deg, var(--A) 0%, var(--azulv) 45%, var(--naranja) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1;
+}
+/* Subtítulo header: Rajdhani, azul puro */
+.lsub{
+  font-family:var(--fr);font-size:12px;font-weight:600;
+  letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--A);opacity:.7;line-height:1;margin-top:2px;
+}
+.hbadge{
+  font-family:var(--fr);font-size:11px;font-weight:700;
+  letter-spacing:0.14em;text-transform:uppercase;
+  padding:5px 14px;border-radius:20px;
+  background:var(--fA);color:var(--A);border:1px solid var(--bA);
+}
 
-/* ─ STATS ─ */
-.sbar{display:flex;background:var(--gris-bg);border-bottom:1px solid var(--gris-borde);padding:0 36px}
-.st{display:flex;align-items:center;gap:10px;padding:14px 28px 14px 0;margin-right:28px;border-right:1px solid var(--gris-borde)}
+/* ─── HERO ───────────────────────────────────────── */
+.hero{
+  padding:54px 36px 46px;background:var(--white);
+  border-bottom:1.5px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 90% 15%, rgba(245,168,32,.11) 0%,transparent 48%),
+    radial-gradient(circle at 8%  85%, rgba(27,90,168,.09)  0%,transparent 48%);
+  pointer-events:none;
+}
+
+/* Eyebrow: Rajdhani azul */
+.hew{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-bottom:18px;
+  font-family:var(--fr);font-size:12px;font-weight:700;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--naranjaD);
+}
+.hew::before{content:'';display:inline-block;width:22px;height:2.5px;background:var(--naranja);border-radius:2px}
+
+/* H1 — Exo 2 900, dos líneas con color propio */
+.hero h1{
+  font-family:var(--fd);font-size:46px;font-weight:900;
+  letter-spacing:-0.01em;line-height:1.08;
+  margin-bottom:18px;max-width:640px;position:relative;
+}
+/* Línea 1: azul cobalto — confianza */
+.hl1{display:block;color:var(--A)}
+/* Línea 2: degradado naranja — dinamismo, acción */
+.hl2{
+  display:block;
+  background:linear-gradient(90deg,var(--naranjaD) 0%,var(--naranja) 60%,#FFD060 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+/* Párrafo hero: Rajdhani, azul moderado */
+.hero p{
+  font-family:var(--fr);font-size:16px;font-weight:500;
+  color:var(--A);opacity:.65;
+  line-height:1.65;max-width:500px;position:relative;
+}
+
+/* ─── STATS ──────────────────────────────────────── */
+.sbar{
+  display:flex;background:var(--bg);
+  border-bottom:1.5px solid var(--border);
+  padding:0 36px;
+}
+.st{
+  display:flex;align-items:center;gap:11px;
+  padding:15px 28px 15px 0;margin-right:28px;
+  border-right:1px solid var(--border);
+}
 .st:last-child{border-right:none}
-/* Números estadísticos: Syne 700, color semántico */
-.sn{font-family:var(--fd);font-size:26px;font-weight:700;line-height:1;letter-spacing:-0.03em}
-.sl{font-size:11px;font-weight:400;color:var(--gris-medio);line-height:1.35}
+/* Números: Exo 2 900, cada uno con su color de etapa */
+.snum{font-family:var(--fd);font-size:28px;font-weight:900;letter-spacing:-0.03em;line-height:1}
+/* Etiqueta stat: Rajdhani, color de etapa al 70% */
+.stxt{font-family:var(--fr);font-size:12px;font-weight:600;letter-spacing:0.06em;line-height:1.35}
 
-/* ─ LAYOUT ─ */
-.lay{display:flex;min-height:calc(100vh - 68px)}
+/* ─── LAYOUT ─────────────────────────────────────── */
+.lay{display:flex;min-height:calc(100vh - 66px)}
 
-/* ─ SIDEBAR ─ */
-.sb{width:250px;flex-shrink:0;background:var(--blanco);border-right:1px solid var(--gris-borde);padding:24px 0 32px;position:sticky;top:68px;height:calc(100vh - 68px);overflow-y:auto}
-.sbt{font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gris-medio);padding:0 20px 12px}
-.nb{display:flex;align-items:center;gap:11px;width:100%;padding:11px 20px;border:none;background:none;cursor:pointer;border-left:3px solid transparent;transition:background .16s;text-align:left}
-.nb:hover{background:var(--gris-bg)}
-.nb.active{background:var(--f-apertura);border-left-color:var(--azul-vivo)}
-.ni{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;transition:transform .15s}
-.nb:hover .ni{transform:scale(1.1)}
+/* ─── SIDEBAR ────────────────────────────────────── */
+.sb{
+  width:248px;flex-shrink:0;
+  background:var(--white);
+  border-right:1.5px solid var(--border);
+  padding:22px 0 32px;
+  position:sticky;top:66px;
+  height:calc(100vh - 66px);overflow-y:auto;
+}
+/* Label sidebar: Rajdhani */
+.sbl{
+  font-family:var(--fr);font-size:11px;font-weight:700;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--A);opacity:.5;
+  padding:0 20px 12px;
+}
+.nb{
+  display:flex;align-items:center;gap:11px;
+  width:100%;padding:11px 20px;
+  border:none;background:none;cursor:pointer;
+  border-left:3px solid transparent;
+  transition:background .15s;text-align:left;
+}
+.nb:hover{background:var(--bg)}
+.nb.active{border-left-color:currentColor}
+
+/* Icono */
+.ni{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;transition:transform .15s}
+.nb:hover .ni{transform:scale(1.08)}
+
 .nf{flex:1;min-width:0}
-/* Nombre en sidebar: Syne 700, color de etapa */
-.nm{font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:-0.01em;display:block;line-height:1.2}
-.ns{font-size:11px;font-weight:400;color:var(--gris-medio);display:block;margin-top:1px}
-/* Contador: Syne, color de etapa */
-.nc{font-family:var(--fd);font-size:13px;font-weight:700;min-width:24px;height:24px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.nb[data-cat="apertura"] .nm,.nb[data-cat="apertura"] .nc{color:var(--t-apertura)}
-.nb[data-cat="relevamiento"] .nm,.nb[data-cat="relevamiento"] .nc{color:var(--t-relevamiento)}
-.nb[data-cat="gestion"] .nm,.nb[data-cat="gestion"] .nc{color:var(--t-gestion)}
-.nb[data-cat="resolucion"] .nm,.nb[data-cat="resolucion"] .nc{color:var(--t-resolucion)}
-.nb[data-cat="cierre"] .nm,.nb[data-cat="cierre"] .nc{color:var(--t-cierre)}
-.nb[data-cat="todas"] .nm,.nb[data-cat="todas"] .nc{color:var(--azul-vivo)}
-.nb[data-cat="apertura"] .nc{background:var(--f-apertura)}
-.nb[data-cat="relevamiento"] .nc{background:var(--f-relevamiento)}
-.nb[data-cat="gestion"] .nc{background:var(--f-gestion)}
-.nb[data-cat="resolucion"] .nc{background:var(--f-resolucion)}
-.nb[data-cat="cierre"] .nc{background:var(--f-cierre)}
-.nb[data-cat="todas"] .nc{background:var(--f-apertura)}
-.sep{height:1px;background:var(--gris-borde);margin:10px 20px}
+/* Nombre categoría: Exo 2 800, color de etapa FUERTE */
+.nm{font-family:var(--fd);font-size:14px;font-weight:800;letter-spacing:0.01em;display:block;line-height:1.2}
+/* Sub: Rajdhani, mismo color a 55% */
+.ns{font-family:var(--fr);font-size:12px;font-weight:500;letter-spacing:0.04em;display:block;margin-top:1px;opacity:.6}
+/* Contador: Exo 2 700, color de etapa */
+.nc{font-family:var(--fd);font-size:13px;font-weight:700;min-width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
-/* ─ CONTENT ─ */
-.ct{flex:1;padding:32px 36px;background:var(--gris-bg)}
+/* Colores por etapa — sidebar */
+.nb[data-cat="todas"]        .nm,.nb[data-cat="todas"]        .nc,.nb[data-cat="todas"]        .ns{color:var(--azulv)}
+.nb[data-cat="apertura"]     .nm,.nb[data-cat="apertura"]     .nc,.nb[data-cat="apertura"]     .ns{color:var(--A)}
+.nb[data-cat="relevamiento"] .nm,.nb[data-cat="relevamiento"] .nc,.nb[data-cat="relevamiento"] .ns{color:var(--R)}
+.nb[data-cat="gestion"]      .nm,.nb[data-cat="gestion"]      .nc,.nb[data-cat="gestion"]      .ns{color:var(--G)}
+.nb[data-cat="resolucion"]   .nm,.nb[data-cat="resolucion"]   .nc,.nb[data-cat="resolucion"]   .ns{color:var(--Re)}
+.nb[data-cat="cierre"]       .nm,.nb[data-cat="cierre"]       .nc,.nb[data-cat="cierre"]       .ns{color:var(--C)}
+
+.nb[data-cat="todas"]        .ni{background:var(--fA)}
+.nb[data-cat="apertura"]     .ni{background:var(--fA)}
+.nb[data-cat="relevamiento"] .ni{background:var(--fR)}
+.nb[data-cat="gestion"]      .ni{background:var(--fG)}
+.nb[data-cat="resolucion"]   .ni{background:var(--fRe)}
+.nb[data-cat="cierre"]       .ni{background:var(--fC)}
+
+.nb[data-cat="todas"]        .nc{background:var(--fA);color:var(--azulv)}
+.nb[data-cat="apertura"]     .nc{background:var(--fA);color:var(--A)}
+.nb[data-cat="relevamiento"] .nc{background:var(--fR);color:var(--R)}
+.nb[data-cat="gestion"]      .nc{background:var(--fG);color:var(--G)}
+.nb[data-cat="resolucion"]   .nc{background:var(--fRe);color:var(--Re)}
+.nb[data-cat="cierre"]       .nc{background:var(--fC);color:var(--C)}
+
+/* Active usa el fondo de etapa */
+.nb[data-cat="todas"].active        {background:var(--fA);border-left-color:var(--azulv)}
+.nb[data-cat="apertura"].active     {background:var(--fA);border-left-color:var(--A)}
+.nb[data-cat="relevamiento"].active {background:var(--fR);border-left-color:var(--R)}
+.nb[data-cat="gestion"].active      {background:var(--fG);border-left-color:var(--G)}
+.nb[data-cat="resolucion"].active   {background:var(--fRe);border-left-color:var(--Re)}
+.nb[data-cat="cierre"].active       {background:var(--fC);border-left-color:var(--C)}
+
+.sep{height:1px;background:var(--border);margin:10px 20px}
+
+/* ─── CONTENT ────────────────────────────────────── */
+.ct{flex:1;padding:32px 36px;background:var(--bg)}
 .ch{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap}
-/* Eyebrow de sección: color semántico */
-.ey{font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:5px;display:flex;align-items:center;gap:6px}
-.ey::before{content:'';display:inline-block;width:16px;height:2px;border-radius:2px;background:currentColor}
-/* Título de sección: Syne 800 con color semántico */
-.ctit{font-family:var(--fd);font-size:26px;font-weight:800;letter-spacing:-0.03em;line-height:1.15}
-.cd{font-size:13px;font-weight:300;color:var(--gris-medio);margin-top:5px;line-height:1.6;max-width:430px}
+
+/* Eyebrow sección: Rajdhani, color de etapa */
+.cey{
+  font-family:var(--fr);font-size:11px;font-weight:700;
+  letter-spacing:0.18em;text-transform:uppercase;
+  margin-bottom:6px;display:flex;align-items:center;gap:7px;
+}
+.cey::before{content:'';display:inline-block;width:18px;height:2.5px;border-radius:2px;background:currentColor}
+
+/* Título de sección: Exo 2 900, color de etapa DOMINANTE */
+.ctit{
+  font-family:var(--fd);font-size:28px;font-weight:900;
+  letter-spacing:-0.01em;line-height:1.1;
+}
+/* Descripción: Rajdhani, mismo color a 60% */
+.cdesc{
+  font-family:var(--fr);font-size:14px;font-weight:500;
+  letter-spacing:0.02em;
+  margin-top:5px;line-height:1.55;max-width:430px;
+  opacity:.65;
+}
+
 /* Búsqueda */
-.sw{display:flex;align-items:center;background:var(--blanco);border:1px solid var(--gris-borde);border-radius:40px;padding:9px 16px;gap:8px;min-width:210px;transition:border-color .16s,box-shadow .16s}
-.sw:focus-within{border-color:var(--azul-vivo);box-shadow:0 0 0 3px rgba(36,114,204,.1)}
-.sw input{border:none;background:none;outline:none;font-family:var(--fb);font-size:13px;color:var(--negro);flex:1}
-.sw input::placeholder{color:var(--gris-medio)}
-.sw svg{color:var(--gris-medio);flex-shrink:0}
+.sw{
+  display:flex;align-items:center;
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:40px;padding:9px 16px;gap:8px;min-width:210px;
+  transition:border-color .15s,box-shadow .15s;
+}
+.sw:focus-within{border-color:var(--azulv);box-shadow:0 0 0 3px rgba(36,114,204,.12)}
+/* Input búsqueda: Exo 2, azul */
+.sw input{
+  border:none;background:none;outline:none;
+  font-family:var(--fd);font-size:13px;font-weight:600;
+  color:var(--A);flex:1;
+}
+.sw input::placeholder{color:var(--A);opacity:.4;font-weight:400}
+.sw svg{color:var(--A);opacity:.5;flex-shrink:0}
 
-/* ─ GRID ─ */
-.gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:14px}
+/* ─── GRID ───────────────────────────────────────── */
+.gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
 
-/* ─ CARD ─ */
-.card{background:var(--blanco);border:1px solid var(--gris-borde);border-radius:var(--rl);overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column;box-shadow:var(--sh);animation:fu .22s ease both}
-.card:hover{transform:translateY(-2px);box-shadow:var(--shh);border-color:var(--azul-palido)}
-@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.cb{height:4px;flex-shrink:0}
-.cbd{padding:18px 20px 14px;flex:1;display:flex;flex-direction:column}
-.ctag{display:inline-flex;align-items:center;gap:5px;font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:10px;width:fit-content}
-/* Nombre de plantilla en card: Syne 700, color de etapa */
-.cnm{font-family:var(--fd);font-size:15px;font-weight:700;letter-spacing:-0.02em;line-height:1.25;margin-bottom:9px}
-.cpv{font-family:var(--fb);font-size:12.5px;font-weight:300;color:var(--gris-medio);line-height:1.65;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.cf{padding:11px 20px;border-top:1px solid var(--gris-borde);display:flex;align-items:center;justify-content:space-between;background:rgba(244,246,250,.6)}
-/* Etiqueta de etapa en footer: Syne + color de etapa */
-.cet{font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:-0.01em}
-.ccp{display:inline-flex;align-items:center;gap:4px;font-family:var(--fb);font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;border:1px solid var(--gris-borde);background:var(--blanco);color:var(--azul);cursor:pointer;transition:background .14s,color .14s,border-color .14s}
-.ccp:hover{background:var(--azul-vivo);color:#fff;border-color:var(--azul-vivo)}
-.ccp.ok{background:#1A7A52;color:#fff;border-color:#1A7A52}
+/* ─── CARD ───────────────────────────────────────── */
+.card{
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:var(--rl);
+  overflow:hidden;cursor:pointer;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+  display:flex;flex-direction:column;
+  box-shadow:var(--sh);
+  animation:fu .22s ease both;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shh)}
+@keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
-/* ─ VACÍO ─ */
-.empty{grid-column:1/-1;text-align:center;padding:64px 20px;color:var(--gris-medio)}
+/* Barra superior: color sólido de etapa */
+.cbar{height:5px;flex-shrink:0}
+
+.cbody{padding:18px 20px 14px;flex:1;display:flex;flex-direction:column}
+
+/* Etiqueta tipo: fondo tintado, tipografía de etapa */
+.ctag{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:var(--fr);font-size:10px;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  padding:3px 10px;border-radius:20px;
+  margin-bottom:11px;width:fit-content;
+}
+/* Nombre plantilla: Exo 2 800, COLOR DE ETAPA DOMINANTE */
+.cnm{
+  font-family:var(--fd);font-size:15px;font-weight:800;
+  letter-spacing:0.01em;line-height:1.22;
+  margin-bottom:9px;
+}
+/* Preview texto: Rajdhani, color de etapa suave */
+.cpv{
+  font-family:var(--fr);font-size:13px;font-weight:400;
+  letter-spacing:0.01em;
+  line-height:1.62;flex:1;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+  opacity:.6;
+}
+.cfoot{
+  padding:11px 20px;border-top:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+}
+/* Etiqueta etapa footer: Exo 2 700, color de etapa */
+.cet{
+  font-family:var(--fd);font-size:11px;font-weight:700;
+  letter-spacing:0.04em;text-transform:uppercase;
+}
+/* Botón copiar: Rajdhani, color de etapa */
+.ccp{
+  display:inline-flex;align-items:center;gap:4px;
+  font-family:var(--fr);font-size:12px;font-weight:700;
+  letter-spacing:0.06em;text-transform:uppercase;
+  padding:5px 13px;border-radius:20px;
+  border:1.5px solid;background:none;cursor:pointer;
+  transition:background .14s,color .14s;
+}
+
+/* ─── ESTADOS VACÍO ──────────────────────────────── */
+.empty{
+  grid-column:1/-1;text-align:center;padding:64px 20px;
+}
 .empty svg{opacity:.2;margin-bottom:14px}
-.empty p{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--gris-medio)}
+/* Texto vacío: Exo 2, azul */
+.empty p{font-family:var(--fd);font-size:17px;font-weight:800;letter-spacing:0.02em;color:var(--A)}
 
-/* ─ MODAL ─ */
-.ov{position:fixed;inset:0;background:rgba(10,16,36,.52);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;backdrop-filter:blur(4px)}
+/* ─── MODAL ──────────────────────────────────────── */
+.ov{
+  position:fixed;inset:0;
+  background:rgba(8,14,30,.55);
+  z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;visibility:hidden;
+  transition:opacity .2s,visibility .2s;
+  backdrop-filter:blur(5px);
+}
 .ov.open{opacity:1;visibility:visible}
-.mo{background:var(--blanco);border-radius:20px;max-width:540px;width:100%;box-shadow:0 24px 64px rgba(10,16,40,.22);overflow:hidden;transform:translateY(18px) scale(.97);transition:transform .22s}
+.mo{
+  background:var(--white);border-radius:20px;
+  max-width:540px;width:100%;
+  box-shadow:0 28px 72px rgba(8,14,30,.24);
+  overflow:hidden;
+  transform:translateY(20px) scale(.97);
+  transition:transform .22s;
+}
 .ov.open .mo{transform:none}
-.mh{padding:22px 24px 18px;border-bottom:1px solid var(--gris-borde);display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
-/* Eyebrow modal: color semántico */
-.mey{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:5px;font-family:var(--fb)}
-/* Título modal: Syne 800, color de etapa */
-.mtt{font-family:var(--fd);font-size:22px;font-weight:800;letter-spacing:-0.03em;line-height:1.15}
-.mx{width:30px;height:30px;border-radius:50%;border:1px solid var(--gris-borde);background:none;font-size:16px;color:var(--gris-medio);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .14s}
-.mx:hover{background:var(--gris-bg)}
-.mb{padding:22px 24px}
-.fl{font-family:var(--fb);font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gris-medio);margin-bottom:8px}
-.ft{background:var(--gris-bg);border:1px solid var(--gris-borde);border-radius:var(--r);padding:16px;font-family:var(--fb);font-size:14px;font-weight:400;line-height:1.7;color:var(--negro);white-space:pre-wrap;margin-bottom:14px}
-.fn{display:none;background:var(--f-gestion);border:1px solid #F0C040;border-radius:var(--r);padding:12px 14px;font-size:12px;font-weight:400;color:#6B4800;line-height:1.6;margin-bottom:18px}
-.fn.on{display:block}
-.mbs{display:flex;gap:10px;flex-wrap:wrap}
-/* Botones: Syne 700 para peso tipográfico */
-.bm{flex:1;min-width:140px;padding:12px 20px;background:var(--azul-vivo);color:#fff;border:none;border-radius:40px;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:-0.01em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:background .14s,transform .12s}
-.bm:hover{background:var(--azul);transform:translateY(-1px)}
-.bm.ok{background:#1A7A52}
-.bs{padding:12px 20px;background:none;border:1px solid var(--gris-borde);border-radius:40px;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:-0.01em;color:var(--negro);cursor:pointer;transition:background .14s}
-.bs:hover{background:var(--gris-bg)}
 
-/* ─ TOAST ─ */
-.toast{position:fixed;bottom:24px;right:24px;background:var(--negro);color:#fff;padding:12px 18px;border-radius:40px;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:-0.01em;box-shadow:0 8px 28px rgba(10,16,40,.2);z-index:300;display:flex;align-items:center;gap:7px;transform:translateY(56px);opacity:0;transition:transform .28s,opacity .28s}
+.mh{
+  padding:22px 24px 18px;
+  border-bottom:1.5px solid var(--border);
+  display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+}
+/* Eyebrow modal: Rajdhani, color de etapa */
+.mey{
+  font-family:var(--fr);font-size:11px;font-weight:700;
+  letter-spacing:0.18em;text-transform:uppercase;
+  margin-bottom:5px;display:flex;align-items:center;gap:6px;
+}
+.mey::before{content:'';display:inline-block;width:14px;height:2px;border-radius:2px;background:currentColor}
+/* Título modal: Exo 2 900, color de etapa */
+.mtt{font-family:var(--fd);font-size:23px;font-weight:900;letter-spacing:0.01em;line-height:1.15}
+.mx{
+  width:30px;height:30px;border-radius:50%;
+  border:1.5px solid var(--border);background:none;
+  font-size:16px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  color:var(--A);opacity:.5;
+  transition:opacity .14s,background .14s;
+}
+.mx:hover{opacity:1;background:var(--bg)}
+
+.mb{padding:22px 24px}
+
+/* Label campo: Rajdhani, color de etapa */
+.fl{
+  font-family:var(--fr);font-size:11px;font-weight:700;
+  letter-spacing:0.16em;text-transform:uppercase;
+  margin-bottom:8px;
+}
+/* Texto de plantilla: solo aquí usamos negro azulado (contenido del cliente) */
+.ftext{
+  background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);
+  padding:16px;
+  font-family:var(--fr);font-size:14px;font-weight:400;
+  line-height:1.72;color:var(--nero);
+  white-space:pre-wrap;margin-bottom:14px;
+  letter-spacing:0.01em;
+}
+/* Nota interna: Exo 2 600, ámbar */
+.fnota{
+  display:none;
+  background:var(--fG);border:1.5px solid var(--bG);border-radius:var(--r);
+  padding:12px 14px;
+  font-family:var(--fd);font-size:12px;font-weight:600;
+  letter-spacing:0.01em;
+  color:var(--G);line-height:1.6;margin-bottom:18px;
+}
+.fnota.on{display:block}
+
+.mbs{display:flex;gap:10px;flex-wrap:wrap}
+/* Botón principal modal: Exo 2 800 */
+.bm{
+  flex:1;min-width:140px;
+  padding:12px 20px;border:none;border-radius:40px;
+  font-family:var(--fd);font-size:13px;font-weight:800;
+  letter-spacing:0.04em;text-transform:uppercase;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;
+  transition:opacity .14s,transform .12s;
+}
+.bm:hover{opacity:.88;transform:translateY(-1px)}
+.bs{
+  padding:12px 20px;background:none;border-radius:40px;
+  font-family:var(--fd);font-size:13px;font-weight:700;
+  letter-spacing:0.04em;text-transform:uppercase;
+  cursor:pointer;transition:background .14s;
+  border:1.5px solid var(--border);color:var(--A);
+}
+.bs:hover{background:var(--bg)}
+
+/* ─── TOAST ──────────────────────────────────────── */
+.toast{
+  position:fixed;bottom:24px;right:24px;
+  padding:13px 20px;border-radius:40px;
+  font-family:var(--fd);font-size:13px;font-weight:800;
+  letter-spacing:0.04em;text-transform:uppercase;
+  box-shadow:0 8px 32px rgba(8,14,30,.22);
+  z-index:300;display:flex;align-items:center;gap:8px;
+  background:var(--nero);color:var(--white);
+  transform:translateY(60px);opacity:0;
+  transition:transform .28s,opacity .28s;
+}
 .toast.on{transform:translateY(0);opacity:1}
 
-/* ─ RESPONSIVE ─ */
+/* ─── RESPONSIVE ─────────────────────────────────── */
 @media(max-width:840px){
   .lay{flex-direction:column}
-  .sb{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid var(--gris-borde);display:flex;flex-direction:row;overflow-x:auto;overflow-y:hidden;padding:12px 0;gap:0}
-  .sbt,.sep{display:none}
+  .sb{width:100%;height:auto;position:static;border-right:none;border-bottom:1.5px solid var(--border);display:flex;flex-direction:row;overflow-x:auto;overflow-y:hidden;padding:10px 0;gap:0}
+  .sbl,.sep{display:none}
   .nb{flex-direction:column;gap:3px;padding:8px 14px;border-left:none;border-bottom:3px solid transparent;flex-shrink:0;align-items:center}
-  .nb.active{border-bottom-color:var(--azul-vivo);border-left:none}
+  .nb[data-cat="apertura"].active{border-bottom-color:var(--A);border-left:none}
+  .nb[data-cat="relevamiento"].active{border-bottom-color:var(--R);border-left:none}
+  .nb[data-cat="gestion"].active{border-bottom-color:var(--G);border-left:none}
+  .nb[data-cat="resolucion"].active{border-bottom-color:var(--Re);border-left:none}
+  .nb[data-cat="cierre"].active{border-bottom-color:var(--C);border-left:none}
+  .nb[data-cat="todas"].active{border-bottom-color:var(--azulv);border-left:none}
   .nf,.nc{display:none}
   .nm{font-size:11px}
-  .ct{padding:20px}
-  .hero,.sbar{padding-left:20px;padding-right:20px}
+  .ct,.hero,.sbar{padding-left:20px;padding-right:20px}
   header{padding:0 20px}
-  .hero h1{font-size:32px}
+  .hero h1{font-size:34px}
   .gr{grid-template-columns:1fr}
 }
 </style>
@@ -207,38 +483,46 @@ header{background:var(--blanco);border-bottom:1px solid var(--gris-borde);height
 <!-- HEADER -->
 <header>
   <div class="lw">
-    <svg width="42" height="42" viewBox="0 0 42 42" fill="none">
-      <polygon points="21,3 37,12 37,30 21,39 5,30 5,12" fill="#1B5AA8" opacity="0.1"/>
-      <polygon points="21,3 37,12 37,30 21,39 5,30 5,12" fill="none" stroke="#2472CC" stroke-width="1.2"/>
-      <polygon points="21,10 31,21 21,32 11,21" fill="#F5A820" opacity="0.92"/>
-      <polygon points="21,14 27,21 21,28 15,21" fill="#1B5AA8"/>
-      <path d="M14 5.5 Q21 2 28 5.5" stroke="#F5A820" stroke-width="1.2" stroke-linecap="round" opacity="0.55" fill="none"/>
-      <path d="M11 8 Q21 2.5 31 8" stroke="#F5A820" stroke-width="0.8" stroke-linecap="round" opacity="0.25" fill="none"/>
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+      <polygon points="22,2 40,12 40,32 22,42 4,32 4,12" fill="#1B5AA8" opacity="0.1"/>
+      <polygon points="22,2 40,12 40,32 22,42 4,32 4,12" fill="none" stroke="#2472CC" stroke-width="1.4"/>
+      <polygon points="22,10 33,22 22,34 11,22" fill="#F5A820" opacity="0.94"/>
+      <polygon points="22,15 28,22 22,29 16,22" fill="#1B5AA8"/>
+      <path d="M12 7 Q22 1 32 7" stroke="#F5A820" stroke-width="1.3" stroke-linecap="round" fill="none" opacity=".5"/>
+      <path d="M9 10 Q22 2 35 10" stroke="#F5A820" stroke-width=".8" stroke-linecap="round" fill="none" opacity=".25"/>
     </svg>
-    <div class="lt">
-      <span class="ln">SEKUNET</span>
-      <span class="ls">Repositorio de plantillas</span>
+    <div>
+      <div class="lname">SEKUNET</div>
+      <div class="lsub">Servicio &amp; Soporte</div>
     </div>
   </div>
-  <span class="chip">v 1.0 · 2025</span>
+  <span class="hbadge">Plantillas v 1.0</span>
 </header>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="htag">Servicio al cliente · Taller de seguridad</div>
+  <div class="hew">Taller de seguridad · Atención al cliente</div>
   <h1>
     <span class="hl1">Plantillas de atención</span>
     <span class="hl2">listas para usar.</span>
   </h1>
-  <p>Seleccione una etapa en el panel lateral para filtrar las plantillas disponibles. Haga clic en cualquier plantilla para ver el texto completo y copiarlo al instante.</p>
+  <p>Seleccione una etapa en el panel lateral. Haga clic en cualquier plantilla para ver el texto completo y copiarlo al instante.</p>
 </div>
 
 <!-- STATS -->
 <div class="sbar">
-  <div class="st"><div><div class="sn" style="color:var(--azul-vivo)">22</div><div class="sl">Plantillas<br>totales</div></div></div>
-  <div class="st"><div><div class="sn" style="color:var(--t-relevamiento)">9</div><div class="sl">Existentes<br>en uso</div></div></div>
-  <div class="st"><div><div class="sn" style="color:var(--t-resolucion)">13</div><div class="sl">Propuestas<br>nuevas</div></div></div>
-  <div class="st"><div><div class="sn" style="color:var(--t-gestion)">5</div><div class="sl">Etapas de<br>conversación</div></div></div>
+  <div class="st">
+    <div><div class="snum" style="color:var(--azulv)">22</div><div class="stxt" style="color:var(--azulv)">Plantillas<br>totales</div></div>
+  </div>
+  <div class="st">
+    <div><div class="snum" style="color:var(--R)">9</div><div class="stxt" style="color:var(--R)">Existentes<br>en uso</div></div>
+  </div>
+  <div class="st">
+    <div><div class="snum" style="color:var(--Re)">13</div><div class="stxt" style="color:var(--Re)">Propuestas<br>nuevas</div></div>
+  </div>
+  <div class="st">
+    <div><div class="snum" style="color:var(--G)">5</div><div class="stxt" style="color:var(--G)">Etapas de<br>conversación</div></div>
+  </div>
 </div>
 
 <!-- LAYOUT -->
@@ -246,35 +530,35 @@ header{background:var(--blanco);border-bottom:1px solid var(--gris-borde);height
 
   <!-- SIDEBAR -->
   <aside class="sb">
-    <div class="sbt">Categorías</div>
+    <div class="sbl">Etapas</div>
     <button class="nb active" data-cat="todas" onclick="setCat('todas',this)">
-      <div class="ni" style="background:#EEF4FF">⊞</div>
+      <div class="ni">⊞</div>
       <div class="nf"><span class="nm">Todas</span><span class="ns">Vista completa</span></div>
       <span class="nc">22</span>
     </button>
     <div class="sep"></div>
     <button class="nb" data-cat="apertura" onclick="setCat('apertura',this)">
-      <div class="ni" style="background:var(--f-apertura)">👋</div>
+      <div class="ni">👋</div>
       <div class="nf"><span class="nm">Apertura</span><span class="ns">Inicio de contacto</span></div>
       <span class="nc">2</span>
     </button>
     <button class="nb" data-cat="relevamiento" onclick="setCat('relevamiento',this)">
-      <div class="ni" style="background:var(--f-relevamiento)">🔍</div>
+      <div class="ni">🔍</div>
       <div class="nf"><span class="nm">Relevamiento</span><span class="ns">Diagnóstico y datos</span></div>
       <span class="nc">4</span>
     </button>
     <button class="nb" data-cat="gestion" onclick="setCat('gestion',this)">
-      <div class="ni" style="background:var(--f-gestion)">⚙️</div>
+      <div class="ni">⚙️</div>
       <div class="nf"><span class="nm">Gestión</span><span class="ns">Proceso en taller</span></div>
       <span class="nc">7</span>
     </button>
     <button class="nb" data-cat="resolucion" onclick="setCat('resolucion',this)">
-      <div class="ni" style="background:var(--f-resolucion)">✅</div>
+      <div class="ni">✅</div>
       <div class="nf"><span class="nm">Resolución</span><span class="ns">Entrega y resultado</span></div>
       <span class="nc">6</span>
     </button>
     <button class="nb" data-cat="cierre" onclick="setCat('cierre',this)">
-      <div class="ni" style="background:var(--f-cierre)">🔒</div>
+      <div class="ni">🔒</div>
       <div class="nf"><span class="nm">Cierre</span><span class="ns">Fin de conversación</span></div>
       <span class="nc">3</span>
     </button>
@@ -284,9 +568,9 @@ header{background:var(--blanco);border-bottom:1px solid var(--gris-borde);height
   <main class="ct">
     <div class="ch">
       <div>
-        <div class="ey" id="ey" style="color:var(--azul-vivo)">Vista general</div>
-        <div class="ctit" id="ctit" style="color:var(--azul)">Todas las plantillas</div>
-        <div class="cd" id="cd">Repositorio completo organizado por etapa de conversación.</div>
+        <div class="cey" id="ey" style="color:var(--azulv)">Vista general</div>
+        <div class="ctit" id="ctit" style="color:var(--azulv)">Todas las plantillas</div>
+        <div class="cdesc" id="cdesc" style="color:var(--azulv)">Repositorio completo organizado por etapa de conversación.</div>
       </div>
       <div class="sw">
         <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
@@ -301,13 +585,16 @@ header{background:var(--blanco);border-bottom:1px solid var(--gris-borde);height
 <div class="ov" id="ov" onclick="closeOut(event)">
   <div class="mo">
     <div class="mh">
-      <div><div class="mey" id="mey"></div><div class="mtt" id="mtt"></div></div>
+      <div>
+        <div class="mey" id="mey"></div>
+        <div class="mtt" id="mtt"></div>
+      </div>
       <button class="mx" onclick="closeModal()">✕</button>
     </div>
     <div class="mb">
-      <div class="fl">Texto de la plantilla</div>
-      <div class="ft" id="mft"></div>
-      <div class="fn" id="mfn"></div>
+      <div class="fl" id="mfl"></div>
+      <div class="ftext" id="mft"></div>
+      <div class="fnota" id="mfn"></div>
       <div class="mbs">
         <button class="bm" id="mcp" onclick="copyModal()">
           <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
@@ -322,10 +609,11 @@ header{background:var(--blanco);border-bottom:1px solid var(--gris-borde);height
 <!-- TOAST -->
 <div class="toast" id="toast">
   <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-  <span>¡Copiado al portapapeles!</span>
+  ¡Copiado al portapapeles!
 </div>
 
 <script>
+/* ── DATOS ── */
 const P=[
   {id:1,cat:"apertura",nombre:"Saludo inicial",tipo:"Existente",texto:"Buen día, gracias por contactarnos. ¿En qué le podemos ayudar hoy?",nota:null},
   {id:2,cat:"apertura",nombre:"Alerta activa / urgencia",tipo:"Nueva — alta prioridad",texto:"Entendemos que su sistema puede estar presentando una situación urgente. Si existe riesgo inmediato para personas o bienes, le recomendamos contactar primero a emergencias. Una vez que esté seguro/a, con mucho gusto le asistimos con el equipo. ¿Cómo le podemos ayudar?",nota:"Usar cuando el cliente mencione alarma sonando, humo, activación de sensores u otra emergencia activa."},
@@ -343,7 +631,7 @@ const P=[
   {id:14,cat:"resolucion",nombre:"Confirmar envío para garantía",tipo:"Existente",texto:"Por supuesto, puede enviarlo sin problema. Una vez que lo recibamos, lo revisaremos y, si se trata de un defecto de fábrica, quedará cubierto por la garantía.",nota:null},
   {id:15,cat:"resolucion",nombre:"Garantía no aplica — explicación",tipo:"Nueva — prioridad media",texto:"Luego de realizar la revisión técnica del equipo, hemos determinado que el daño encontrado corresponde a [CAUSA]. Este tipo de situación no está cubierta por la garantía del fabricante. Con gusto le detallamos las opciones de reparación disponibles con su respectivo costo.",nota:"Usar tono empático. Evitar lenguaje acusatorio. Siempre ofrecer la alternativa de reparación con costo."},
   {id:16,cat:"resolucion",nombre:"Equipo listo para retiro o entrega",tipo:"Nueva — alta prioridad",texto:"¡Buenas noticias! Su equipo [MODELO / N° DE ORDEN] ya se encuentra listo. Puede retirarlo en nuestra oficina ubicada en [DIRECCIÓN] en horario [HORARIO], o si lo prefiere, podemos coordinar el envío a su dirección. ¿Cómo le queda mejor?",nota:null},
-  {id:17,cat:"resolucion",nombre:"Equipo sin reparación posible",tipo:"Nueva — prioridad media",texto:"Lamentablemente, luego del diagnóstico técnico, hemos determinado que el equipo presenta un daño que no permite una reparación viable, ya sea por el grado del daño o porque el costo de reparación superaría el valor del equipo. Con gusto le asesoramos sobre las opciones de reposición disponibles.",nota:"Usar tono cálido y empático. Ofrecer siempre una alternativa concreta."},
+  {id:17,cat:"resolucion",nombre:"Equipo sin reparación posible",tipo:"Nueva — prioridad media",texto:"Lamentablemente, luego del diagnóstico técnico, hemos determinado que el equipo presenta un daño que no permite una reparación viable. Con gusto le asesoramos sobre las opciones de reposición disponibles.",nota:"Usar tono cálido y empático. Ofrecer siempre una alternativa concreta."},
   {id:18,cat:"resolucion",nombre:"Solicitud de certificado técnico",tipo:"Nueva — prioridad baja",texto:"Con mucho gusto le emitimos el certificado técnico de la reparación realizada, con el detalle completo del trabajo efectuado y los repuestos utilizados. ¿Nos podría indicar si necesita algún formato específico, o si el certificado es para fines de garantía, auditoría o trámite con su aseguradora?",nota:null},
   {id:19,cat:"resolucion",nombre:"Transferencia a técnico especializado",tipo:"Nueva — prioridad baja",texto:"Esta consulta requiere la atención de nuestro técnico especializado. Vamos a ponerle en contacto con [NOMBRE / ÁREA] para que pueda asistirle de la mejor manera. Un momento, por favor.",nota:null},
   {id:20,cat:"cierre",nombre:"Cierre estándar",tipo:"Existente",texto:"Ha sido un placer atenderle. Quedamos a su disposición para cualquier consulta futura. ¡Que tenga un excelente día!",nota:null},
@@ -351,20 +639,22 @@ const P=[
   {id:22,cat:"cierre",nombre:"Cierre por inactividad",tipo:"Existente",texto:"Debido a que no hemos recibido respuesta, vamos a cerrar esta conversación. Si necesita ayuda en el futuro, con gusto le atendemos. ¡Que tenga un buen día!",nota:null},
 ];
 
+/* ── CONFIGURACIÓN ── */
 const CAT={
-  todas:        {ey:"Vista general",          tit:"Todas las plantillas",       desc:"Repositorio completo organizado por etapa de conversación.",             color:"var(--azul-vivo)",         bar:"#2472CC"},
-  apertura:     {ey:"Etapa 1 — Apertura",     tit:"Apertura",                   desc:"Primer contacto. El objetivo es generar confianza y disponibilidad.",    color:"var(--t-apertura)",        bar:"#2472CC"},
-  relevamiento: {ey:"Etapa 2 — Relevamiento", tit:"Relevamiento",               desc:"Recopilación de datos técnicos y contexto del cliente.",                 color:"var(--t-relevamiento)",    bar:"#1A7A52"},
-  gestion:      {ey:"Etapa 3 — Gestión",      tit:"Gestión en taller",          desc:"Comunicación durante el proceso: recepción, avances y presupuestos.",    color:"var(--t-gestion)",         bar:"#C07B00"},
-  resolucion:   {ey:"Etapa 4 — Resolución",   tit:"Resolución",                 desc:"Comunicación del resultado: garantía, entrega o derivaciones.",          color:"var(--t-resolucion)",      bar:"#C24E10"},
-  cierre:       {ey:"Etapa 5 — Cierre",       tit:"Cierre de conversación",     desc:"Finalización adecuada del contacto según el tipo de interacción.",       color:"var(--t-cierre)",          bar:"#5B3FA8"},
+  todas:        {ey:"Vista general",          tit:"Todas las plantillas",    desc:"Repositorio completo por etapa de conversación.", color:"var(--azulv)",  bar:"#2472CC"},
+  apertura:     {ey:"Etapa 1 — Apertura",     tit:"Apertura",                desc:"Primer contacto. Confianza y disponibilidad.",    color:"var(--A)",     bar:"#1B5AA8"},
+  relevamiento: {ey:"Etapa 2 — Relevamiento", tit:"Relevamiento",            desc:"Diagnóstico remoto y recopilación de datos.",     color:"var(--R)",     bar:"#0E8A5F"},
+  gestion:      {ey:"Etapa 3 — Gestión",      tit:"Gestión en taller",       desc:"Recepción, avances, presupuestos y seguimiento.", color:"var(--G)",     bar:"#B87200"},
+  resolucion:   {ey:"Etapa 4 — Resolución",   tit:"Resolución",              desc:"Garantía, entrega, casos especiales.",           color:"var(--Re)",    bar:"#C03A10"},
+  cierre:       {ey:"Etapa 5 — Cierre",       tit:"Cierre de conversación",  desc:"Finalización adecuada según el tipo de caso.",   color:"var(--C)",     bar:"#5030A0"},
 };
 
+/* Tipo de plantilla — tag con color */
 const TIPO={
-  "Existente":               {bg:"#EDF7F1",color:"#155535",border:"#7FD4A6",dot:"#1A7A52"},
-  "Nueva — alta prioridad":  {bg:"#FEF0E6",color:"#7A2800",border:"#F5A060",dot:"#C24E10"},
-  "Nueva — prioridad media": {bg:"#FFF8E0",color:"#6B4800",border:"#F0C040",dot:"#C07B00"},
-  "Nueva — prioridad baja":  {bg:"#EEF4FF",color:"#1B3A7A",border:"#90BAF0",dot:"#2472CC"},
+  "Existente":               {bg:"#E3F7EF",color:"#0B6040",border:"#7ACFAD",dot:"#0E8A5F"},
+  "Nueva — alta prioridad":  {bg:"#FFF0E8",color:"#7A2000",border:"#F09070",dot:"#C03A10"},
+  "Nueva — prioridad media": {bg:"#FFF5DC",color:"#6B4400",border:"#E8C060",dot:"#B87200"},
+  "Nueva — prioridad baja":  {bg:"#E8F1FF",color:"#1A3A7A",border:"#9ABDE8",dot:"#1B5AA8"},
 };
 
 let cur="todas", curTxt="";
@@ -376,25 +666,33 @@ function render(){
   let list=cur==="todas"?P:P.filter(p=>p.cat===cur);
   if(q)list=list.filter(p=>p.nombre.toLowerCase().includes(q)||p.texto.toLowerCase().includes(q)||p.tipo.toLowerCase().includes(q));
   if(!list.length){
-    g.innerHTML=`<div class="empty"><svg width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><p>Sin resultados para esa búsqueda.</p></div>`;
+    g.innerHTML=`<div class="empty"><svg width="44" height="44" fill="none" stroke="var(--A)" stroke-width="1.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><p>Sin resultados para esa búsqueda.</p></div>`;
     return;
   }
   list.forEach((p,i)=>{
-    const cc=CAT[p.cat],tc=TIPO[p.tipo]||TIPO["Existente"];
+    const cc=CAT[p.cat], tc=TIPO[p.tipo]||TIPO["Existente"];
     const d=document.createElement('div');
-    d.className='card';d.style.animationDelay=(i*.038)+'s';d.onclick=()=>openModal(p);
-    d.innerHTML=`<div class="cb" style="background:${cc.bar}"></div>
-      <div class="cbd">
-        <span class="ctag" style="background:${tc.bg};color:${tc.color};border:1px solid ${tc.border}">
-          <span style="width:6px;height:6px;border-radius:50%;background:${tc.dot};display:inline-block;flex-shrink:0"></span>${p.tipo}
+    d.className='card';d.style.animationDelay=(i*.038)+'s';
+    d.onclick=()=>openModal(p);
+    // Card: hover border con color de etapa
+    d.addEventListener('mouseenter',()=>d.style.borderColor=cc.bar);
+    d.addEventListener('mouseleave',()=>d.style.borderColor='');
+    d.innerHTML=`
+      <div class="cbar" style="background:${cc.bar}"></div>
+      <div class="cbody">
+        <span class="ctag" style="background:${tc.bg};color:${tc.color};border:1.5px solid ${tc.border}">
+          <span style="width:6px;height:6px;border-radius:50%;background:${tc.dot};display:inline-block;flex-shrink:0"></span>
+          ${p.tipo}
         </span>
-        <div class="cnm" style="color:${cc.color}">${p.nombre}</div>
-        <div class="cpv">${p.texto}</div>
+        <div class="cnm" style="color:${cc.bar}">${p.nombre}</div>
+        <div class="cpv" style="color:${cc.bar}">${p.texto}</div>
       </div>
-      <div class="cf">
-        <span class="cet" style="color:${cc.color}">${cc.ey}</span>
-        <button class="ccp" onclick="event.stopPropagation();qcp(this,\`${e(p.texto)}\`)">
-          <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar
+      <div class="cfoot" style="background:${cc.bar}0D">
+        <span class="cet" style="color:${cc.bar}">${cc.ey}</span>
+        <button class="ccp" style="color:${cc.bar};border-color:${cc.bar}40"
+          onclick="event.stopPropagation();qcp(this,\`${e(p.texto)}\`,\`${cc.bar}\`)">
+          <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copiar
         </button>
       </div>`;
     g.appendChild(d);
@@ -408,11 +706,12 @@ function setCat(cat,btn){
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   const cc=CAT[cat];
+  ['ey','ctit','cdesc'].forEach(id=>{
+    document.getElementById(id).style.color=cc.color;
+  });
   document.getElementById('ey').textContent=cc.ey;
-  document.getElementById('ey').style.color=cc.color;
   document.getElementById('ctit').textContent=cc.tit;
-  document.getElementById('ctit').style.color=cc.color;
-  document.getElementById('cd').textContent=cc.desc;
+  document.getElementById('cdesc').textContent=cc.desc;
   document.getElementById('si').value="";
   render();
 }
@@ -420,14 +719,17 @@ function setCat(cat,btn){
 function openModal(p){
   const cc=CAT[p.cat];
   document.getElementById('mey').textContent=cc.ey;
-  document.getElementById('mey').style.color=cc.color;
+  document.getElementById('mey').style.color=cc.bar;
   document.getElementById('mtt').textContent=p.nombre;
-  document.getElementById('mtt').style.color=cc.color;
+  document.getElementById('mtt').style.color=cc.bar;
+  document.getElementById('mfl').textContent="Texto de la plantilla";
+  document.getElementById('mfl').style.color=cc.bar;
   document.getElementById('mft').textContent=p.texto;
   const n=document.getElementById('mfn');
   n.textContent=p.nota?"💡 "+p.nota:"";
   n.classList.toggle('on',!!p.nota);
   const b=document.getElementById('mcp');
+  b.style.background=cc.bar;b.style.color="#fff";
   b.classList.remove('ok');
   b.innerHTML=`<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copiar texto`;
   curTxt=p.texto;
@@ -435,25 +737,25 @@ function openModal(p){
   document.body.style.overflow='hidden';
 }
 function closeModal(){document.getElementById('ov').classList.remove('open');document.body.style.overflow='';}
-function closeOut(e){if(e.target===document.getElementById('ov'))closeModal();}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+function closeOut(ev){if(ev.target===document.getElementById('ov'))closeModal();}
+document.addEventListener('keydown',ev=>{if(ev.key==='Escape')closeModal();});
 
-function cp(t){if(navigator.clipboard)navigator.clipboard.writeText(t);else{const x=document.createElement('textarea');x.value=t;x.style.position='fixed';x.style.opacity='0';document.body.appendChild(x);x.select();document.execCommand('copy');document.body.removeChild(x);}}
+function cp(t){if(navigator.clipboard)navigator.clipboard.writeText(t);else{const x=document.createElement('textarea');x.value=t;x.style.cssText='position:fixed;opacity:0';document.body.appendChild(x);x.select();document.execCommand('copy');document.body.removeChild(x);}}
 function showToast(){const t=document.getElementById('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200);}
 
-function qcp(btn,txt){
+function qcp(btn,txt,color){
   cp(txt);
-  btn.classList.add('ok');
+  const prev=btn.innerHTML;
+  btn.style.background=color;btn.style.color='#fff';btn.style.borderColor=color;
   btn.innerHTML=`<svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>¡Listo!`;
-  setTimeout(()=>{btn.classList.remove('ok');btn.innerHTML=`<svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar`;},2000);
+  setTimeout(()=>{btn.style.background='';btn.style.color=color;btn.style.borderColor=color+'40';btn.innerHTML=prev;},2000);
   showToast();
 }
 function copyModal(){
   cp(curTxt);
   const b=document.getElementById('mcp');
-  b.classList.add('ok');
-  b.innerHTML=`<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> ¡Copiado!`;
-  setTimeout(()=>{b.classList.remove('ok');b.innerHTML=`<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copiar texto`;},2000);
+  const prev=b.innerHTML;b.innerHTML=`<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> ¡Copiado!`;
+  setTimeout(()=>{b.innerHTML=prev;},2000);
   showToast();
 }
 
