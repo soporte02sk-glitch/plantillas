@@ -4,465 +4,198 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sekunet — Repositorio de Plantillas</title>
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-/*
-  SISTEMA TIPOGRÁFICO CROMÁTICO — SEKUNET
-  ─────────────────────────────────────────────────────
-  Fuente display:  Exo 2  — geométrica, angular, tecnológica, futurista
-  Fuente apoyo:    Rajdhani — condensada, técnica, militar-tech
-
-  PSICOLOGÍA DEL COLOR EN TIPOGRAFÍA (aplicada a TODO el sistema):
-  Apertura     → #1B5AA8  Azul cobalto    Confianza, primer contacto, estabilidad
-  Relevamiento → #0E8A5F  Verde teal      Análisis, precisión, claridad técnica
-  Gestión      → #B87200  Ámbar dorado    Proceso activo, atención, trabajo en curso
-  Resolución   → #C03A10  Coral intenso   Acción, resultado, urgencia positiva
-  Cierre       → #5030A0  Índigo fuerte   Conclusión, orden, seguridad
-  ─────────────────────────────────────────────────────
-  Regla: NO existe texto neutro (gris). Cada texto lleva
-  el color de su etapa o el azul de marca. El negro solo
-  en el cuerpo de la plantilla (contenido del cliente).
-*/
-
 :root {
-  /* Marca */
-  --azul:   #1B5AA8;
-  --azulv:  #2472CC;
-  --naranja:#F5A820;
-  --naranjaD:#C07800;
-
-  /* Colores tipográficos por etapa — TODOS saturados */
-  --A:  #1B5AA8;  /* Apertura */
-  --R:  #0E8A5F;  /* Relevamiento */
-  --G:  #B87200;  /* Gestión */
-  --Re: #C03A10;  /* Resolución */
-  --C:  #5030A0;  /* Cierre */
-
-  /* Fondos de etapa — tintados, nunca blanco puro */
-  --fA:  #E8F1FF;
-  --fR:  #E3F7EF;
-  --fG:  #FFF5DC;
-  --fRe: #FFF0E8;
-  --fC:  #F0EBFF;
-
-  /* Bordes */
-  --bA:  #9ABDE8;
-  --bR:  #7ACFAD;
-  --bG:  #E8C060;
-  --bRe: #F09070;
-  --bC:  #A888E8;
-
-  /* Estructurales */
-  --bg:    #F2F4F8;
-  --white: #FFFFFF;
-  --border:#DDE3EE;
-  --nero:  #0D1520;  /* Casi negro azulado — solo para cuerpo de plantilla */
-
-  --fd: 'Exo 2', sans-serif;
-  --fr: 'Rajdhani', sans-serif;
-
-  --r: 10px;
-  --rl: 16px;
-  --sh: 0 2px 10px rgba(13,21,32,.07), 0 6px 24px rgba(13,21,32,.04);
-  --shh: 0 8px 32px rgba(27,90,168,.18);
+  --A:  #1B5AA8; --fA: #EEF4FF; --bA: #9ABDE8;
+  --R:  #0E7A52; --fR: #E8F8F2; --bR: #6FCFAA;
+  --G:  #A06800; --fG: #FFF5DC; --bG: #E0B84A;
+  --Re: #B83010; --fRe:#FFF0EA; --bRe:#F09878;
+  --C:  #5030A0; --fC: #F0EBFF; --bC: #A888E8;
+  --azulv:#2472CC; --naranja:#F5A820; --naranjad:#C07800;
+  --white:#FFFFFF; --bg:#F2F4F8; --border:#DDE3EE;
+  --dark:#0D1520; --mid:#556080; --light:#8899BB;
+  --fd:'Exo 2',sans-serif; --fr:'Rajdhani',sans-serif;
+  --r:10px; --rl:16px;
+  --sh:0 2px 10px rgba(13,21,32,.07),0 4px 20px rgba(13,21,32,.04);
+  --shh:0 8px 32px rgba(27,90,168,.17);
 }
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--fd);background:var(--white);color:var(--nero);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:var(--fd);background:var(--white);color:var(--dark);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* ─── HEADER ─────────────────────────────────────── */
-header{
-  background:var(--white);
-  border-bottom:1.5px solid var(--border);
-  height:66px;padding:0 36px;
-  display:flex;align-items:center;justify-content:space-between;
-  position:sticky;top:0;z-index:100;
-  box-shadow:0 1px 16px rgba(13,21,32,.06);
-}
+/* ─ HEADER ─ */
+header{background:var(--white);border-bottom:1.5px solid var(--border);height:66px;padding:0 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 1px 14px rgba(13,21,32,.06)}
 .lw{display:flex;align-items:center;gap:14px}
+.lname{font-family:var(--fd);font-size:22px;font-weight:900;letter-spacing:.06em;background:linear-gradient(90deg,var(--A) 0%,var(--azulv) 45%,var(--naranja) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.lsub{font-family:var(--fr);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--A);opacity:.6;line-height:1;margin-top:2px}
+.hbadge{font-family:var(--fr);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 13px;border-radius:20px;background:var(--fA);color:var(--A);border:1px solid var(--bA)}
 
-/* Logotipo: Exo 2 900, degradado azul→azulvivo→naranja */
-.lname{
-  font-family:var(--fd);font-size:22px;font-weight:900;
-  letter-spacing:0.06em;
-  background:linear-gradient(90deg, var(--A) 0%, var(--azulv) 45%, var(--naranja) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  line-height:1;
-}
-/* Subtítulo header: Rajdhani, azul puro */
-.lsub{
-  font-family:var(--fr);font-size:12px;font-weight:600;
-  letter-spacing:0.16em;text-transform:uppercase;
-  color:var(--A);opacity:.7;line-height:1;margin-top:2px;
-}
-.hbadge{
-  font-family:var(--fr);font-size:11px;font-weight:700;
-  letter-spacing:0.14em;text-transform:uppercase;
-  padding:5px 14px;border-radius:20px;
-  background:var(--fA);color:var(--A);border:1px solid var(--bA);
-}
-
-/* ─── HERO ───────────────────────────────────────── */
-.hero{
-  padding:54px 36px 46px;background:var(--white);
-  border-bottom:1.5px solid var(--border);
-  position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(circle at 90% 15%, rgba(245,168,32,.11) 0%,transparent 48%),
-    radial-gradient(circle at 8%  85%, rgba(27,90,168,.09)  0%,transparent 48%);
-  pointer-events:none;
-}
-
-/* Eyebrow: Rajdhani azul */
-.hew{
-  display:inline-flex;align-items:center;gap:8px;
-  margin-bottom:18px;
-  font-family:var(--fr);font-size:12px;font-weight:700;
-  letter-spacing:0.18em;text-transform:uppercase;
-  color:var(--naranjaD);
-}
-.hew::before{content:'';display:inline-block;width:22px;height:2.5px;background:var(--naranja);border-radius:2px}
-
-/* H1 — Exo 2 900, dos líneas con color propio */
-.hero h1{
-  font-family:var(--fd);font-size:46px;font-weight:900;
-  letter-spacing:-0.01em;line-height:1.08;
-  margin-bottom:18px;max-width:640px;position:relative;
-}
-/* Línea 1: azul cobalto — confianza */
+/* ─ HERO ─ */
+.hero{padding:48px 32px 40px;border-bottom:1.5px solid var(--border);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 90% 15%,rgba(245,168,32,.1) 0%,transparent 48%),radial-gradient(circle at 8% 85%,rgba(27,90,168,.08) 0%,transparent 48%);pointer-events:none}
+.hew{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;font-family:var(--fr);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--naranjad)}
+.hew::before{content:'';display:inline-block;width:20px;height:2.5px;background:var(--naranja);border-radius:2px}
+.hero h1{font-family:var(--fd);font-size:42px;font-weight:900;letter-spacing:-.01em;line-height:1.08;margin-bottom:14px;max-width:620px;position:relative}
 .hl1{display:block;color:var(--A)}
-/* Línea 2: degradado naranja — dinamismo, acción */
-.hl2{
-  display:block;
-  background:linear-gradient(90deg,var(--naranjaD) 0%,var(--naranja) 60%,#FFD060 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-/* Párrafo hero: Rajdhani, azul moderado */
-.hero p{
-  font-family:var(--fr);font-size:16px;font-weight:500;
-  color:var(--A);opacity:.65;
-  line-height:1.65;max-width:500px;position:relative;
-}
+.hl2{display:block;background:linear-gradient(90deg,var(--naranjad) 0%,var(--naranja) 60%,#FFD060 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-family:var(--fr);font-size:15px;font-weight:500;color:var(--mid);line-height:1.65;max-width:480px;position:relative}
 
-/* ─── STATS ──────────────────────────────────────── */
-.sbar{
-  display:flex;background:var(--bg);
-  border-bottom:1.5px solid var(--border);
-  padding:0 36px;
-}
-.st{
-  display:flex;align-items:center;gap:11px;
-  padding:15px 28px 15px 0;margin-right:28px;
-  border-right:1px solid var(--border);
-}
+/* ─ STATS ─ */
+.sbar{display:flex;background:var(--bg);border-bottom:1.5px solid var(--border);padding:0 32px}
+.st{display:flex;align-items:center;gap:10px;padding:14px 26px 14px 0;margin-right:26px;border-right:1px solid var(--border)}
 .st:last-child{border-right:none}
-/* Números: Exo 2 900, cada uno con su color de etapa */
-.snum{font-family:var(--fd);font-size:28px;font-weight:900;letter-spacing:-0.03em;line-height:1}
-/* Etiqueta stat: Rajdhani, color de etapa al 70% */
-.stxt{font-family:var(--fr);font-size:12px;font-weight:600;letter-spacing:0.06em;line-height:1.35}
+.snum{font-family:var(--fd);font-size:27px;font-weight:900;letter-spacing:-.03em;line-height:1}
+.stxt{font-family:var(--fr);font-size:12px;font-weight:600;letter-spacing:.04em;line-height:1.3}
 
-/* ─── LAYOUT ─────────────────────────────────────── */
+/* ─ LAYOUT ─ */
 .lay{display:flex;min-height:calc(100vh - 66px)}
 
-/* ─── SIDEBAR ────────────────────────────────────── */
-.sb{
-  width:248px;flex-shrink:0;
-  background:var(--white);
-  border-right:1.5px solid var(--border);
-  padding:22px 0 32px;
-  position:sticky;top:66px;
-  height:calc(100vh - 66px);overflow-y:auto;
-}
-/* Label sidebar: Rajdhani */
-.sbl{
-  font-family:var(--fr);font-size:11px;font-weight:700;
-  letter-spacing:0.18em;text-transform:uppercase;
-  color:var(--A);opacity:.5;
-  padding:0 20px 12px;
-}
-.nb{
-  display:flex;align-items:center;gap:11px;
-  width:100%;padding:11px 20px;
-  border:none;background:none;cursor:pointer;
-  border-left:3px solid transparent;
-  transition:background .15s;text-align:left;
-}
+/* ─ SIDEBAR ─ */
+.sb{width:246px;flex-shrink:0;background:var(--white);border-right:1.5px solid var(--border);padding:20px 0 30px;position:sticky;top:66px;height:calc(100vh - 66px);overflow-y:auto}
+.sbl{font-family:var(--fr);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--light);padding:0 18px 10px}
+.nb{display:flex;align-items:center;gap:10px;width:100%;padding:10px 18px;border:none;background:none;cursor:pointer;border-left:3px solid transparent;transition:background .15s;text-align:left}
 .nb:hover{background:var(--bg)}
-.nb.active{border-left-color:currentColor}
-
-/* Icono */
-.ni{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;transition:transform .15s}
+.ni{width:33px;height:33px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;transition:transform .14s}
 .nb:hover .ni{transform:scale(1.08)}
-
 .nf{flex:1;min-width:0}
-/* Nombre categoría: Exo 2 800, color de etapa FUERTE */
-.nm{font-family:var(--fd);font-size:14px;font-weight:800;letter-spacing:0.01em;display:block;line-height:1.2}
-/* Sub: Rajdhani, mismo color a 55% */
-.ns{font-family:var(--fr);font-size:12px;font-weight:500;letter-spacing:0.04em;display:block;margin-top:1px;opacity:.6}
-/* Contador: Exo 2 700, color de etapa */
-.nc{font-family:var(--fd);font-size:13px;font-weight:700;min-width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-
-/* Colores por etapa — sidebar */
-.nb[data-cat="todas"]        .nm,.nb[data-cat="todas"]        .nc,.nb[data-cat="todas"]        .ns{color:var(--azulv)}
-.nb[data-cat="apertura"]     .nm,.nb[data-cat="apertura"]     .nc,.nb[data-cat="apertura"]     .ns{color:var(--A)}
-.nb[data-cat="relevamiento"] .nm,.nb[data-cat="relevamiento"] .nc,.nb[data-cat="relevamiento"] .ns{color:var(--R)}
-.nb[data-cat="gestion"]      .nm,.nb[data-cat="gestion"]      .nc,.nb[data-cat="gestion"]      .ns{color:var(--G)}
-.nb[data-cat="resolucion"]   .nm,.nb[data-cat="resolucion"]   .nc,.nb[data-cat="resolucion"]   .ns{color:var(--Re)}
-.nb[data-cat="cierre"]       .nm,.nb[data-cat="cierre"]       .nc,.nb[data-cat="cierre"]       .ns{color:var(--C)}
-
-.nb[data-cat="todas"]        .ni{background:var(--fA)}
-.nb[data-cat="apertura"]     .ni{background:var(--fA)}
-.nb[data-cat="relevamiento"] .ni{background:var(--fR)}
-.nb[data-cat="gestion"]      .ni{background:var(--fG)}
-.nb[data-cat="resolucion"]   .ni{background:var(--fRe)}
-.nb[data-cat="cierre"]       .ni{background:var(--fC)}
-
-.nb[data-cat="todas"]        .nc{background:var(--fA);color:var(--azulv)}
-.nb[data-cat="apertura"]     .nc{background:var(--fA);color:var(--A)}
-.nb[data-cat="relevamiento"] .nc{background:var(--fR);color:var(--R)}
-.nb[data-cat="gestion"]      .nc{background:var(--fG);color:var(--G)}
-.nb[data-cat="resolucion"]   .nc{background:var(--fRe);color:var(--Re)}
-.nb[data-cat="cierre"]       .nc{background:var(--fC);color:var(--C)}
-
-/* Active usa el fondo de etapa */
+.nm{font-family:var(--fd);font-size:14px;font-weight:800;display:block;line-height:1.2;letter-spacing:.01em}
+.ns{font-family:var(--fr);font-size:11px;font-weight:500;letter-spacing:.04em;display:block;margin-top:1px;opacity:.6}
+.nc{font-family:var(--fd);font-size:12px;font-weight:700;min-width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+/* colores sidebar */
+.nb[data-cat="todas"]        .nm,.nb[data-cat="todas"]        .nc{color:var(--azulv)} .nb[data-cat="todas"] .ni{background:var(--fA)} .nb[data-cat="todas"] .nc{background:var(--fA)}
+.nb[data-cat="apertura"]     .nm,.nb[data-cat="apertura"]     .nc{color:var(--A)}  .nb[data-cat="apertura"] .ni{background:var(--fA)} .nb[data-cat="apertura") .nc{background:var(--fA)}
+.nb[data-cat="relevamiento"] .nm,.nb[data-cat="relevamiento"] .nc{color:var(--R)}  .nb[data-cat="relevamiento"] .ni{background:var(--fR)}
+.nb[data-cat="gestion"]      .nm,.nb[data-cat="gestion"]      .nc{color:var(--G)}  .nb[data-cat="gestion"] .ni{background:var(--fG)}
+.nb[data-cat="resolucion"]   .nm,.nb[data-cat="resolucion"]   .nc{color:var(--Re)} .nb[data-cat="resolucion"] .ni{background:var(--fRe)}
+.nb[data-cat="cierre"]       .nm,.nb[data-cat="cierre"]       .nc{color:var(--C)}  .nb[data-cat="cierre"] .ni{background:var(--fC)}
+.nb[data-cat="apertura"]     .nc{background:var(--fA)}
+.nb[data-cat="relevamiento"] .nc{background:var(--fR)}
+.nb[data-cat="gestion"]      .nc{background:var(--fG)}
+.nb[data-cat="resolucion"]   .nc{background:var(--fRe)}
+.nb[data-cat="cierre"]       .nc{background:var(--fC)}
 .nb[data-cat="todas"].active        {background:var(--fA);border-left-color:var(--azulv)}
 .nb[data-cat="apertura"].active     {background:var(--fA);border-left-color:var(--A)}
 .nb[data-cat="relevamiento"].active {background:var(--fR);border-left-color:var(--R)}
 .nb[data-cat="gestion"].active      {background:var(--fG);border-left-color:var(--G)}
 .nb[data-cat="resolucion"].active   {background:var(--fRe);border-left-color:var(--Re)}
 .nb[data-cat="cierre"].active       {background:var(--fC);border-left-color:var(--C)}
+.sep{height:1px;background:var(--border);margin:8px 18px}
 
-.sep{height:1px;background:var(--border);margin:10px 20px}
+/* ─ CONTENT ─ */
+.ct{flex:1;padding:28px 32px;background:var(--bg)}
+.ch{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.cey{font-family:var(--fr);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:5px;display:flex;align-items:center;gap:6px}
+.cey::before{content:'';display:inline-block;width:16px;height:2.5px;border-radius:2px;background:currentColor}
+.ctit{font-family:var(--fd);font-size:26px;font-weight:900;letter-spacing:-.01em;line-height:1.1}
+.cdesc{font-family:var(--fr);font-size:14px;font-weight:500;color:var(--mid);margin-top:4px;line-height:1.55;max-width:420px}
+/* Botón nueva plantilla */
+.btn-new{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.03em;padding:10px 18px;border-radius:40px;border:none;cursor:pointer;transition:opacity .15s,transform .12s;white-space:nowrap}
+.btn-new:hover{opacity:.87;transform:translateY(-1px)}
+.search-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sw{display:flex;align-items:center;background:var(--white);border:1.5px solid var(--border);border-radius:40px;padding:8px 15px;gap:7px;min-width:200px;transition:border-color .15s,box-shadow .15s}
+.sw:focus-within{box-shadow:0 0 0 3px rgba(36,114,204,.12)}
+.sw input{border:none;background:none;outline:none;font-family:var(--fd);font-size:13px;font-weight:600;color:var(--dark);flex:1}
+.sw input::placeholder{color:var(--light);font-weight:400}
+.sw svg{color:var(--light);flex-shrink:0}
 
-/* ─── CONTENT ────────────────────────────────────── */
-.ct{flex:1;padding:32px 36px;background:var(--bg)}
-.ch{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap}
-
-/* Eyebrow sección: Rajdhani, color de etapa */
-.cey{
-  font-family:var(--fr);font-size:11px;font-weight:700;
-  letter-spacing:0.18em;text-transform:uppercase;
-  margin-bottom:6px;display:flex;align-items:center;gap:7px;
-}
-.cey::before{content:'';display:inline-block;width:18px;height:2.5px;border-radius:2px;background:currentColor}
-
-/* Título de sección: Exo 2 900, color de etapa DOMINANTE */
-.ctit{
-  font-family:var(--fd);font-size:28px;font-weight:900;
-  letter-spacing:-0.01em;line-height:1.1;
-}
-/* Descripción: Rajdhani, mismo color a 60% */
-.cdesc{
-  font-family:var(--fr);font-size:14px;font-weight:500;
-  letter-spacing:0.02em;
-  margin-top:5px;line-height:1.55;max-width:430px;
-  opacity:.65;
-}
-
-/* Búsqueda */
-.sw{
-  display:flex;align-items:center;
-  background:var(--white);border:1.5px solid var(--border);
-  border-radius:40px;padding:9px 16px;gap:8px;min-width:210px;
-  transition:border-color .15s,box-shadow .15s;
-}
-.sw:focus-within{border-color:var(--azulv);box-shadow:0 0 0 3px rgba(36,114,204,.12)}
-/* Input búsqueda: Exo 2, azul */
-.sw input{
-  border:none;background:none;outline:none;
-  font-family:var(--fd);font-size:13px;font-weight:600;
-  color:var(--A);flex:1;
-}
-.sw input::placeholder{color:var(--A);opacity:.4;font-weight:400}
-.sw svg{color:var(--A);opacity:.5;flex-shrink:0}
-
-/* ─── GRID ───────────────────────────────────────── */
+/* ─ GRID ─ */
 .gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
 
-/* ─── CARD ───────────────────────────────────────── */
-.card{
-  background:var(--white);
-  border:1.5px solid var(--border);
-  border-radius:var(--rl);
-  overflow:hidden;cursor:pointer;
-  transition:transform .2s,box-shadow .2s,border-color .2s;
-  display:flex;flex-direction:column;
-  box-shadow:var(--sh);
-  animation:fu .22s ease both;
-}
-.card:hover{transform:translateY(-3px);box-shadow:var(--shh)}
-@keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-
-/* Barra superior: color sólido de etapa */
+/* ─ CARD ─ */
+.card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--sh);animation:fu .22s ease both;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shh)}
+@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .cbar{height:5px;flex-shrink:0}
+.cbody{padding:16px 18px 12px;flex:1;display:flex;flex-direction:column;gap:8px}
+.ctag{display:inline-flex;align-items:center;gap:5px;font-family:var(--fr);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;width:fit-content}
+/* NOMBRE: grande, oscuro, siempre legible */
+.cnm{font-family:var(--fd);font-size:16px;font-weight:800;line-height:1.25;letter-spacing:.01em;color:var(--dark)}
+/* PREVIEW: tamaño legible, color oscuro fuerte */
+.cpv{font-family:var(--fr);font-size:14px;font-weight:500;line-height:1.65;color:var(--mid);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+/* FOOTER card */
+.cfoot{padding:10px 18px;border-top:1.5px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.cet{font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+/* Acciones de card */
+.cacts{display:flex;align-items:center;gap:6px}
+.cact{display:inline-flex;align-items:center;gap:4px;font-family:var(--fr);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1.5px solid;background:none;cursor:pointer;transition:background .13s,color .13s}
+.cact-copy:hover{color:#fff}
+.cact-edit{border-color:var(--border);color:var(--mid)}
+.cact-edit:hover{background:var(--bg);border-color:var(--mid);color:var(--dark)}
+.cact-del{border-color:var(--border);color:var(--mid)}
+.cact-del:hover{background:#FFF0EA;border-color:#F09878;color:#B83010}
 
-.cbody{padding:18px 20px 14px;flex:1;display:flex;flex-direction:column}
-
-/* Etiqueta tipo: fondo tintado, tipografía de etapa */
-.ctag{
-  display:inline-flex;align-items:center;gap:5px;
-  font-family:var(--fr);font-size:10px;font-weight:700;
-  letter-spacing:0.1em;text-transform:uppercase;
-  padding:3px 10px;border-radius:20px;
-  margin-bottom:11px;width:fit-content;
-}
-/* Nombre plantilla: Exo 2 800, COLOR DE ETAPA DOMINANTE */
-.cnm{
-  font-family:var(--fd);font-size:15px;font-weight:800;
-  letter-spacing:0.01em;line-height:1.22;
-  margin-bottom:9px;
-}
-/* Preview texto: Rajdhani, color de etapa suave */
-.cpv{
-  font-family:var(--fr);font-size:13px;font-weight:400;
-  letter-spacing:0.01em;
-  line-height:1.62;flex:1;
-  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
-  opacity:.6;
-}
-.cfoot{
-  padding:11px 20px;border-top:1.5px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-}
-/* Etiqueta etapa footer: Exo 2 700, color de etapa */
-.cet{
-  font-family:var(--fd);font-size:11px;font-weight:700;
-  letter-spacing:0.04em;text-transform:uppercase;
-}
-/* Botón copiar: Rajdhani, color de etapa */
-.ccp{
-  display:inline-flex;align-items:center;gap:4px;
-  font-family:var(--fr);font-size:12px;font-weight:700;
-  letter-spacing:0.06em;text-transform:uppercase;
-  padding:5px 13px;border-radius:20px;
-  border:1.5px solid;background:none;cursor:pointer;
-  transition:background .14s,color .14s;
-}
-
-/* ─── ESTADOS VACÍO ──────────────────────────────── */
-.empty{
-  grid-column:1/-1;text-align:center;padding:64px 20px;
-}
+/* ─ VACÍO ─ */
+.empty{grid-column:1/-1;text-align:center;padding:60px 20px}
 .empty svg{opacity:.2;margin-bottom:14px}
-/* Texto vacío: Exo 2, azul */
-.empty p{font-family:var(--fd);font-size:17px;font-weight:800;letter-spacing:0.02em;color:var(--A)}
+.empty p{font-family:var(--fd);font-size:16px;font-weight:800;color:var(--light)}
 
-/* ─── MODAL ──────────────────────────────────────── */
-.ov{
-  position:fixed;inset:0;
-  background:rgba(8,14,30,.55);
-  z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;
-  opacity:0;visibility:hidden;
-  transition:opacity .2s,visibility .2s;
-  backdrop-filter:blur(5px);
-}
+/* ─ MODAL BASE ─ */
+.ov{position:fixed;inset:0;background:rgba(8,14,30,.55);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;backdrop-filter:blur(5px)}
 .ov.open{opacity:1;visibility:visible}
-.mo{
-  background:var(--white);border-radius:20px;
-  max-width:540px;width:100%;
-  box-shadow:0 28px 72px rgba(8,14,30,.24);
-  overflow:hidden;
-  transform:translateY(20px) scale(.97);
-  transition:transform .22s;
-}
+.mo{background:var(--white);border-radius:20px;max-width:560px;width:100%;box-shadow:0 28px 72px rgba(8,14,30,.24);overflow:hidden;transform:translateY(20px) scale(.97);transition:transform .22s;max-height:90vh;display:flex;flex-direction:column}
 .ov.open .mo{transform:none}
-
-.mh{
-  padding:22px 24px 18px;
-  border-bottom:1.5px solid var(--border);
-  display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
-}
-/* Eyebrow modal: Rajdhani, color de etapa */
-.mey{
-  font-family:var(--fr);font-size:11px;font-weight:700;
-  letter-spacing:0.18em;text-transform:uppercase;
-  margin-bottom:5px;display:flex;align-items:center;gap:6px;
-}
+.mh{padding:20px 24px 16px;border-bottom:1.5px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-shrink:0}
+.mey{font-family:var(--fr);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:6px}
 .mey::before{content:'';display:inline-block;width:14px;height:2px;border-radius:2px;background:currentColor}
-/* Título modal: Exo 2 900, color de etapa */
-.mtt{font-family:var(--fd);font-size:23px;font-weight:900;letter-spacing:0.01em;line-height:1.15}
-.mx{
-  width:30px;height:30px;border-radius:50%;
-  border:1.5px solid var(--border);background:none;
-  font-size:16px;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  color:var(--A);opacity:.5;
-  transition:opacity .14s,background .14s;
-}
-.mx:hover{opacity:1;background:var(--bg)}
+.mtt{font-family:var(--fd);font-size:22px;font-weight:900;letter-spacing:.01em;line-height:1.15}
+.mx{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--border);background:none;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--mid);transition:background .14s,color .14s}
+.mx:hover{background:var(--bg);color:var(--dark)}
+.mb{padding:20px 24px;overflow-y:auto;flex:1}
 
-.mb{padding:22px 24px}
-
-/* Label campo: Rajdhani, color de etapa */
-.fl{
-  font-family:var(--fr);font-size:11px;font-weight:700;
-  letter-spacing:0.16em;text-transform:uppercase;
-  margin-bottom:8px;
-}
-/* Texto de plantilla: solo aquí usamos negro azulado (contenido del cliente) */
-.ftext{
-  background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);
-  padding:16px;
-  font-family:var(--fr);font-size:14px;font-weight:400;
-  line-height:1.72;color:var(--nero);
-  white-space:pre-wrap;margin-bottom:14px;
-  letter-spacing:0.01em;
-}
-/* Nota interna: Exo 2 600, ámbar */
-.fnota{
-  display:none;
-  background:var(--fG);border:1.5px solid var(--bG);border-radius:var(--r);
-  padding:12px 14px;
-  font-family:var(--fd);font-size:12px;font-weight:600;
-  letter-spacing:0.01em;
-  color:var(--G);line-height:1.6;margin-bottom:18px;
-}
+/* ─ MODAL VER ─ */
+.fl{font-family:var(--fr);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:7px}
+/* Texto plantilla en modal: grande y oscuro */
+.ftext{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);padding:16px;font-family:var(--fr);font-size:15px;font-weight:500;line-height:1.75;color:var(--dark);white-space:pre-wrap;margin-bottom:14px}
+.fnota{display:none;background:var(--fG);border:1.5px solid var(--bG);border-radius:var(--r);padding:12px 14px;font-family:var(--fd);font-size:13px;font-weight:600;color:var(--G);line-height:1.6;margin-bottom:18px}
 .fnota.on{display:block}
-
 .mbs{display:flex;gap:10px;flex-wrap:wrap}
-/* Botón principal modal: Exo 2 800 */
-.bm{
-  flex:1;min-width:140px;
-  padding:12px 20px;border:none;border-radius:40px;
-  font-family:var(--fd);font-size:13px;font-weight:800;
-  letter-spacing:0.04em;text-transform:uppercase;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;
-  transition:opacity .14s,transform .12s;
-}
-.bm:hover{opacity:.88;transform:translateY(-1px)}
-.bs{
-  padding:12px 20px;background:none;border-radius:40px;
-  font-family:var(--fd);font-size:13px;font-weight:700;
-  letter-spacing:0.04em;text-transform:uppercase;
-  cursor:pointer;transition:background .14s;
-  border:1.5px solid var(--border);color:var(--A);
-}
-.bs:hover{background:var(--bg)}
+.bm{flex:1;min-width:130px;padding:11px 18px;border:none;border-radius:40px;font-family:var(--fd);font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:opacity .14s,transform .12s;color:#fff}
+.bm:hover{opacity:.87;transform:translateY(-1px)}
+.bs{padding:11px 18px;background:none;border:1.5px solid var(--border);border-radius:40px;font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--mid);cursor:pointer;transition:background .14s,color .14s}
+.bs:hover{background:var(--bg);color:var(--dark)}
 
-/* ─── TOAST ──────────────────────────────────────── */
-.toast{
-  position:fixed;bottom:24px;right:24px;
-  padding:13px 20px;border-radius:40px;
-  font-family:var(--fd);font-size:13px;font-weight:800;
-  letter-spacing:0.04em;text-transform:uppercase;
-  box-shadow:0 8px 32px rgba(8,14,30,.22);
-  z-index:300;display:flex;align-items:center;gap:8px;
-  background:var(--nero);color:var(--white);
-  transform:translateY(60px);opacity:0;
-  transition:transform .28s,opacity .28s;
+/* ─ MODAL FORM (crear/editar) ─ */
+.form-field{margin-bottom:16px}
+.form-field label{display:block;font-family:var(--fr);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:6px}
+.form-field input,.form-field select,.form-field textarea{
+  width:100%;font-family:var(--fr);font-size:15px;font-weight:500;
+  color:var(--dark);background:var(--white);
+  border:1.5px solid var(--border);border-radius:var(--r);
+  padding:11px 14px;outline:none;
+  transition:border-color .15s,box-shadow .15s;
+  line-height:1.55;
 }
+.form-field textarea{resize:vertical;min-height:120px}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--azulv);box-shadow:0 0 0 3px rgba(36,114,204,.1)}
+.form-field select{cursor:pointer}
+.form-field .hint{font-family:var(--fr);font-size:12px;font-weight:500;color:var(--light);margin-top:5px;font-style:italic}
+.tipo-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tipo-opt{position:relative}
+.tipo-opt input[type=radio]{position:absolute;opacity:0;width:0;height:0}
+.tipo-opt label{display:flex;align-items:center;gap:7px;padding:10px 12px;border:1.5px solid var(--border);border-radius:var(--r);cursor:pointer;font-family:var(--fr);font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--mid);transition:all .14s}
+.tipo-opt label:hover{border-color:var(--azulv);background:var(--fA)}
+.tipo-opt input:checked + label{border-color:var(--azulv);background:var(--fA);color:var(--A)}
+.tipo-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+
+/* ─ MODAL CONFIRMAR BORRAR ─ */
+.del-warn{text-align:center;padding:8px 0 16px}
+.del-icon{font-size:40px;margin-bottom:12px}
+.del-msg{font-family:var(--fr);font-size:15px;font-weight:500;color:var(--mid);line-height:1.6}
+.del-name{font-family:var(--fd);font-size:16px;font-weight:800;color:var(--dark);margin-top:4px}
+.btn-del{padding:11px 20px;background:#B83010;color:#fff;border:none;border-radius:40px;font-family:var(--fd);font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:opacity .14s}
+.btn-del:hover{opacity:.85}
+
+/* ─ TOAST ─ */
+.toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:40px;font-family:var(--fd);font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 8px 30px rgba(8,14,30,.2);z-index:300;display:flex;align-items:center;gap:7px;background:var(--dark);color:#fff;transform:translateY(60px);opacity:0;transition:transform .28s,opacity .28s}
 .toast.on{transform:translateY(0);opacity:1}
 
-/* ─── RESPONSIVE ─────────────────────────────────── */
+/* ─ RESPONSIVE ─ */
 @media(max-width:840px){
   .lay{flex-direction:column}
-  .sb{width:100%;height:auto;position:static;border-right:none;border-bottom:1.5px solid var(--border);display:flex;flex-direction:row;overflow-x:auto;overflow-y:hidden;padding:10px 0;gap:0}
+  .sb{width:100%;height:auto;position:static;border-right:none;border-bottom:1.5px solid var(--border);display:flex;flex-direction:row;overflow-x:auto;overflow-y:hidden;padding:10px 0}
   .sbl,.sep{display:none}
-  .nb{flex-direction:column;gap:3px;padding:8px 14px;border-left:none;border-bottom:3px solid transparent;flex-shrink:0;align-items:center}
+  .nb{flex-direction:column;gap:3px;padding:8px 13px;border-left:none;border-bottom:3px solid transparent;flex-shrink:0;align-items:center}
   .nb[data-cat="apertura"].active{border-bottom-color:var(--A);border-left:none}
   .nb[data-cat="relevamiento"].active{border-bottom-color:var(--R);border-left:none}
   .nb[data-cat="gestion"].active{border-bottom-color:var(--G);border-left:none}
@@ -470,11 +203,11 @@ header{
   .nb[data-cat="cierre"].active{border-bottom-color:var(--C);border-left:none}
   .nb[data-cat="todas"].active{border-bottom-color:var(--azulv);border-left:none}
   .nf,.nc{display:none}
-  .nm{font-size:11px}
-  .ct,.hero,.sbar{padding-left:20px;padding-right:20px}
-  header{padding:0 20px}
-  .hero h1{font-size:34px}
+  .ct,.hero,.sbar{padding-left:16px;padding-right:16px}
+  header{padding:0 16px}
+  .hero h1{font-size:32px}
   .gr{grid-template-columns:1fr}
+  .tipo-row{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -483,18 +216,15 @@ header{
 <!-- HEADER -->
 <header>
   <div class="lw">
-    <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+    <svg width="42" height="42" viewBox="0 0 44 44" fill="none">
       <polygon points="22,2 40,12 40,32 22,42 4,32 4,12" fill="#1B5AA8" opacity="0.1"/>
       <polygon points="22,2 40,12 40,32 22,42 4,32 4,12" fill="none" stroke="#2472CC" stroke-width="1.4"/>
-      <polygon points="22,10 33,22 22,34 11,22" fill="#F5A820" opacity="0.94"/>
+      <polygon points="22,10 33,22 22,34 11,22" fill="#F5A820" opacity="0.93"/>
       <polygon points="22,15 28,22 22,29 16,22" fill="#1B5AA8"/>
       <path d="M12 7 Q22 1 32 7" stroke="#F5A820" stroke-width="1.3" stroke-linecap="round" fill="none" opacity=".5"/>
       <path d="M9 10 Q22 2 35 10" stroke="#F5A820" stroke-width=".8" stroke-linecap="round" fill="none" opacity=".25"/>
     </svg>
-    <div>
-      <div class="lname">SEKUNET</div>
-      <div class="lsub">Servicio &amp; Soporte</div>
-    </div>
+    <div><div class="lname">SEKUNET</div><div class="lsub">Servicio &amp; Soporte</div></div>
   </div>
   <span class="hbadge">Plantillas v 1.0</span>
 </header>
@@ -502,105 +232,161 @@ header{
 <!-- HERO -->
 <div class="hero">
   <div class="hew">Taller de seguridad · Atención al cliente</div>
-  <h1>
-    <span class="hl1">Plantillas de atención</span>
-    <span class="hl2">listas para usar.</span>
-  </h1>
-  <p>Seleccione una etapa en el panel lateral. Haga clic en cualquier plantilla para ver el texto completo y copiarlo al instante.</p>
+  <h1><span class="hl1">Plantillas de atención</span><span class="hl2">listas para usar.</span></h1>
+  <p>Seleccione una etapa, busque una plantilla, o cree nuevas desde el botón <strong>+ Nueva</strong> en cada sección.</p>
 </div>
 
 <!-- STATS -->
 <div class="sbar">
-  <div class="st">
-    <div><div class="snum" style="color:var(--azulv)">22</div><div class="stxt" style="color:var(--azulv)">Plantillas<br>totales</div></div>
-  </div>
-  <div class="st">
-    <div><div class="snum" style="color:var(--R)">9</div><div class="stxt" style="color:var(--R)">Existentes<br>en uso</div></div>
-  </div>
-  <div class="st">
-    <div><div class="snum" style="color:var(--Re)">13</div><div class="stxt" style="color:var(--Re)">Propuestas<br>nuevas</div></div>
-  </div>
-  <div class="st">
-    <div><div class="snum" style="color:var(--G)">5</div><div class="stxt" style="color:var(--G)">Etapas de<br>conversación</div></div>
-  </div>
+  <div class="st"><div><div class="snum" id="stat-total" style="color:var(--azulv)">0</div><div class="stxt" style="color:var(--azulv)">Plantillas<br>totales</div></div></div>
+  <div class="st"><div><div class="snum" id="stat-exist" style="color:var(--R)">0</div><div class="stxt" style="color:var(--R)">Existentes<br>en uso</div></div></div>
+  <div class="st"><div><div class="snum" id="stat-new" style="color:var(--Re)">0</div><div class="stxt" style="color:var(--Re)">Propuestas<br>nuevas</div></div></div>
+  <div class="st"><div><div class="snum" style="color:var(--G)">5</div><div class="stxt" style="color:var(--G)">Etapas de<br>conversación</div></div></div>
 </div>
 
 <!-- LAYOUT -->
 <div class="lay">
-
-  <!-- SIDEBAR -->
   <aside class="sb">
     <div class="sbl">Etapas</div>
     <button class="nb active" data-cat="todas" onclick="setCat('todas',this)">
-      <div class="ni">⊞</div>
-      <div class="nf"><span class="nm">Todas</span><span class="ns">Vista completa</span></div>
-      <span class="nc">22</span>
+      <div class="ni">⊞</div><div class="nf"><span class="nm">Todas</span><span class="ns">Vista completa</span></div><span class="nc" id="cnt-todas">0</span>
     </button>
     <div class="sep"></div>
     <button class="nb" data-cat="apertura" onclick="setCat('apertura',this)">
-      <div class="ni">👋</div>
-      <div class="nf"><span class="nm">Apertura</span><span class="ns">Inicio de contacto</span></div>
-      <span class="nc">2</span>
+      <div class="ni">👋</div><div class="nf"><span class="nm">Apertura</span><span class="ns">Inicio de contacto</span></div><span class="nc" id="cnt-apertura">0</span>
     </button>
     <button class="nb" data-cat="relevamiento" onclick="setCat('relevamiento',this)">
-      <div class="ni">🔍</div>
-      <div class="nf"><span class="nm">Relevamiento</span><span class="ns">Diagnóstico y datos</span></div>
-      <span class="nc">4</span>
+      <div class="ni">🔍</div><div class="nf"><span class="nm">Relevamiento</span><span class="ns">Diagnóstico y datos</span></div><span class="nc" id="cnt-relevamiento">0</span>
     </button>
     <button class="nb" data-cat="gestion" onclick="setCat('gestion',this)">
-      <div class="ni">⚙️</div>
-      <div class="nf"><span class="nm">Gestión</span><span class="ns">Proceso en taller</span></div>
-      <span class="nc">7</span>
+      <div class="ni">⚙️</div><div class="nf"><span class="nm">Gestión</span><span class="ns">Proceso en taller</span></div><span class="nc" id="cnt-gestion">0</span>
     </button>
     <button class="nb" data-cat="resolucion" onclick="setCat('resolucion',this)">
-      <div class="ni">✅</div>
-      <div class="nf"><span class="nm">Resolución</span><span class="ns">Entrega y resultado</span></div>
-      <span class="nc">6</span>
+      <div class="ni">✅</div><div class="nf"><span class="nm">Resolución</span><span class="ns">Entrega y resultado</span></div><span class="nc" id="cnt-resolucion">0</span>
     </button>
     <button class="nb" data-cat="cierre" onclick="setCat('cierre',this)">
-      <div class="ni">🔒</div>
-      <div class="nf"><span class="nm">Cierre</span><span class="ns">Fin de conversación</span></div>
-      <span class="nc">3</span>
+      <div class="ni">🔒</div><div class="nf"><span class="nm">Cierre</span><span class="ns">Fin de conversación</span></div><span class="nc" id="cnt-cierre">0</span>
     </button>
   </aside>
 
-  <!-- CONTENT -->
   <main class="ct">
     <div class="ch">
       <div>
         <div class="cey" id="ey" style="color:var(--azulv)">Vista general</div>
         <div class="ctit" id="ctit" style="color:var(--azulv)">Todas las plantillas</div>
-        <div class="cdesc" id="cdesc" style="color:var(--azulv)">Repositorio completo organizado por etapa de conversación.</div>
+        <div class="cdesc" id="cdesc">Repositorio completo organizado por etapa de conversación.</div>
       </div>
-      <div class="sw">
-        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <input type="text" id="si" placeholder="Buscar plantilla…" oninput="render()">
+      <div class="search-row">
+        <div class="sw">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" id="si" placeholder="Buscar plantilla…" oninput="render()">
+        </div>
+        <button class="btn-new" id="btn-new" onclick="openCreate()" style="background:var(--azulv);color:#fff">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+          Nueva plantilla
+        </button>
       </div>
     </div>
     <div class="gr" id="gr"></div>
   </main>
 </div>
 
-<!-- MODAL -->
-<div class="ov" id="ov" onclick="closeOut(event)">
+<!-- MODAL VER -->
+<div class="ov" id="ov-ver" onclick="closeOut(event,'ov-ver')">
   <div class="mo">
     <div class="mh">
-      <div>
-        <div class="mey" id="mey"></div>
-        <div class="mtt" id="mtt"></div>
-      </div>
-      <button class="mx" onclick="closeModal()">✕</button>
+      <div><div class="mey" id="ver-ey"></div><div class="mtt" id="ver-tt"></div></div>
+      <button class="mx" onclick="closeOv('ov-ver')">✕</button>
     </div>
     <div class="mb">
-      <div class="fl" id="mfl"></div>
-      <div class="ftext" id="mft"></div>
-      <div class="fnota" id="mfn"></div>
+      <div class="fl">Texto de la plantilla</div>
+      <div class="ftext" id="ver-txt"></div>
+      <div class="fnota" id="ver-nota"></div>
       <div class="mbs">
-        <button class="bm" id="mcp" onclick="copyModal()">
+        <button class="bm" id="ver-copy" onclick="copyVer()">
           <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
           Copiar texto
         </button>
-        <button class="bs" onclick="closeModal()">Cerrar</button>
+        <button class="bm" id="ver-edit" onclick="openEditFromVer()" style="background:var(--A)">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          Editar
+        </button>
+        <button class="bs" onclick="closeOv('ov-ver')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CREAR / EDITAR -->
+<div class="ov" id="ov-form" onclick="closeOut(event,'ov-form')">
+  <div class="mo">
+    <div class="mh">
+      <div><div class="mey" id="form-ey" style="color:var(--azulv)">Nueva plantilla</div><div class="mtt" id="form-tt" style="color:var(--azulv)">Crear plantilla</div></div>
+      <button class="mx" onclick="closeOv('ov-form')">✕</button>
+    </div>
+    <div class="mb">
+      <div class="form-field">
+        <label>Nombre de la plantilla</label>
+        <input type="text" id="f-nombre" placeholder="Ej: Confirmación de diagnóstico">
+      </div>
+      <div class="form-field">
+        <label>Etapa</label>
+        <select id="f-cat">
+          <option value="apertura">👋 Apertura</option>
+          <option value="relevamiento">🔍 Relevamiento</option>
+          <option value="gestion">⚙️ Gestión en taller</option>
+          <option value="resolucion">✅ Resolución</option>
+          <option value="cierre">🔒 Cierre</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Texto de la plantilla</label>
+        <textarea id="f-texto" placeholder="Escriba el texto que el agente enviará al cliente. Use [VARIABLES] en mayúscula para los campos a completar."></textarea>
+        <div class="hint">Use [CORCHETES] para indicar campos que deben completarse antes de enviar.</div>
+      </div>
+      <div class="form-field">
+        <label>Tipo de plantilla</label>
+        <div class="tipo-row">
+          <div class="tipo-opt"><input type="radio" name="f-tipo" id="t1" value="Existente" checked><label for="t1"><span class="tipo-dot" style="background:#0E7A52"></span>Existente</label></div>
+          <div class="tipo-opt"><input type="radio" name="f-tipo" id="t2" value="Nueva — alta prioridad"><label for="t2"><span class="tipo-dot" style="background:#B83010"></span>Alta prioridad</label></div>
+          <div class="tipo-opt"><input type="radio" name="f-tipo" id="t3" value="Nueva — prioridad media"><label for="t3"><span class="tipo-dot" style="background:#A06800"></span>Prioridad media</label></div>
+          <div class="tipo-opt"><input type="radio" name="f-tipo" id="t4" value="Nueva — prioridad baja"><label for="t4"><span class="tipo-dot" style="background:#1B5AA8"></span>Prioridad baja</label></div>
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Nota interna (opcional)</label>
+        <textarea id="f-nota" placeholder="Instrucción para el agente sobre cuándo usar esta plantilla…" style="min-height:72px"></textarea>
+      </div>
+      <div class="form-field" id="f-error" style="display:none">
+        <div style="background:#FFF0EA;border:1.5px solid #F09878;border-radius:var(--r);padding:10px 14px;font-family:var(--fr);font-size:13px;font-weight:600;color:#B83010"></div>
+      </div>
+      <div class="mbs">
+        <button class="bm" id="form-save" onclick="saveForm()" style="background:var(--azulv)">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Guardar plantilla
+        </button>
+        <button class="bs" onclick="closeOv('ov-form')">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CONFIRMAR BORRAR -->
+<div class="ov" id="ov-del" onclick="closeOut(event,'ov-del')">
+  <div class="mo" style="max-width:420px">
+    <div class="mh">
+      <div><div class="mey" style="color:#B83010;display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:14px;height:2px;border-radius:2px;background:#B83010"></span>Confirmar acción</div><div class="mtt" style="color:#B83010">Eliminar plantilla</div></div>
+      <button class="mx" onclick="closeOv('ov-del')">✕</button>
+    </div>
+    <div class="mb">
+      <div class="del-warn">
+        <div class="del-icon">⚠️</div>
+        <div class="del-msg">¿Está seguro de que desea eliminar esta plantilla?<br>Esta acción no se puede deshacer.</div>
+        <div class="del-name" id="del-name"></div>
+      </div>
+      <div class="mbs" style="margin-top:8px">
+        <button class="btn-del" onclick="confirmDel()">Sí, eliminar</button>
+        <button class="bs" onclick="closeOv('ov-del')">Cancelar</button>
       </div>
     </div>
   </div>
@@ -609,157 +395,257 @@ header{
 <!-- TOAST -->
 <div class="toast" id="toast">
   <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-  ¡Copiado al portapapeles!
+  <span id="toast-msg">¡Listo!</span>
 </div>
 
 <script>
-/* ── DATOS ── */
-const P=[
-  {id:1,cat:"apertura",nombre:"Saludo inicial",tipo:"Existente",texto:"Buen día, gracias por contactarnos. ¿En qué le podemos ayudar hoy?",nota:null},
+/* ── DATOS BASE ── */
+const BASE=[
+  {id:1,cat:"apertura",nombre:"Saludo inicial",tipo:"Existente",texto:"Buen día, gracias por contactarnos. ¿En qué le podemos ayudar hoy?",nota:""},
   {id:2,cat:"apertura",nombre:"Alerta activa / urgencia",tipo:"Nueva — alta prioridad",texto:"Entendemos que su sistema puede estar presentando una situación urgente. Si existe riesgo inmediato para personas o bienes, le recomendamos contactar primero a emergencias. Una vez que esté seguro/a, con mucho gusto le asistimos con el equipo. ¿Cómo le podemos ayudar?",nota:"Usar cuando el cliente mencione alarma sonando, humo, activación de sensores u otra emergencia activa."},
-  {id:3,cat:"relevamiento",nombre:"Pedir más detalle",tipo:"Existente",texto:"Para poder orientarle de la mejor manera, ¿nos podría contar un poco más sobre su consulta o situación?",nota:null},
-  {id:4,cat:"relevamiento",nombre:"Diagnóstico remoto inicial",tipo:"Nueva — alta prioridad",texto:"Para orientarle mejor antes de definir los próximos pasos, ¿nos podría indicar si el dispositivo presenta alguna señal de alerta activa, un sonido intermitente, o simplemente no responde? Cualquier detalle que nos comparta será de gran ayuda.",nota:"Permite decidir si el equipo requiere visita técnica, envío al taller o se puede resolver de forma remota."},
-  {id:5,cat:"relevamiento",nombre:"Solicitar número de serie o modelo",tipo:"Nueva — alta prioridad",texto:"Para poder revisar el historial del equipo y verificar la cobertura de garantía, ¿nos puede indicar el número de serie o el modelo del dispositivo? Por lo general, este dato se encuentra en la etiqueta ubicada en la parte posterior o inferior del equipo.",nota:null},
+  {id:3,cat:"relevamiento",nombre:"Pedir más detalle",tipo:"Existente",texto:"Para poder orientarle de la mejor manera, ¿nos podría contar un poco más sobre su consulta o situación?",nota:""},
+  {id:4,cat:"relevamiento",nombre:"Diagnóstico remoto inicial",tipo:"Nueva — alta prioridad",texto:"Para orientarle mejor antes de definir los próximos pasos, ¿nos podría indicar si el dispositivo presenta alguna señal de alerta activa, un sonido intermitente, o simplemente no responde? Cualquier detalle que nos comparta será de gran ayuda.",nota:"Permite decidir si el equipo requiere visita técnica, envío al taller o resolución remota."},
+  {id:5,cat:"relevamiento",nombre:"Solicitar número de serie o modelo",tipo:"Nueva — alta prioridad",texto:"Para poder revisar el historial del equipo y verificar la cobertura de garantía, ¿nos puede indicar el número de serie o el modelo del dispositivo? Por lo general, este dato se encuentra en la etiqueta ubicada en la parte posterior o inferior del equipo.",nota:""},
   {id:6,cat:"relevamiento",nombre:"Coordinar visita técnica a domicilio",tipo:"Nueva — prioridad media",texto:"Para este tipo de equipo, lo más conveniente es realizar una visita técnica directamente en el lugar de instalación. ¿Nos podría indicar su dirección y disponibilidad horaria para coordinar la visita con nuestro equipo técnico?",nota:"Aplicar cuando el equipo es de instalación fija: paneles de alarma, detectores de humo empotrados, sirenas cableadas, etc."},
   {id:7,cat:"gestion",nombre:"Confirmación de recepción del equipo",tipo:"Nueva — alta prioridad",texto:"Le confirmamos que hemos recibido su equipo en buen estado. Le hemos asignado el número de orden [#ORDEN]. Nuestro equipo técnico procederá con la revisión y le informaremos los resultados del diagnóstico a la brevedad. ¿Tiene alguna observación adicional que debamos considerar?",nota:"Enviar máximo en las primeras 2 horas tras recibir el equipo."},
-  {id:8,cat:"gestion",nombre:"Actualización de estado del dispositivo",tipo:"Existente",texto:"Gracias por su paciencia. Al revisar el sistema, el dispositivo figura aún en [ESTADO]. En cuanto tengamos novedades sobre el avance, le avisamos de inmediato. ¿Hay algo más en lo que podamos ayudarle?",nota:null},
+  {id:8,cat:"gestion",nombre:"Actualización de estado del dispositivo",tipo:"Existente",texto:"Gracias por su paciencia. Al revisar el sistema, el dispositivo figura aún en [ESTADO]. En cuanto tengamos novedades sobre el avance, le avisamos de inmediato. ¿Hay algo más en lo que podamos ayudarle?",nota:""},
   {id:9,cat:"gestion",nombre:"Presupuesto de reparación / autorización",tipo:"Nueva — alta prioridad",texto:"Tras completar el diagnóstico de su equipo [MODELO], el costo estimado de la reparación es de [MONTO], el cual incluye [DESCRIPCIÓN DE TRABAJO Y REPUESTOS]. Para continuar con el proceso, necesitamos su autorización. ¿Nos confirma si desea proceder?",nota:"Siempre detallar qué incluye el costo. Indicar si el precio tiene vigencia limitada en caso de repuestos importados."},
-  {id:10,cat:"gestion",nombre:"Falta de repuesto — tiempo de espera",tipo:"Nueva — prioridad media",texto:"Le informamos que el repuesto requerido para la reparación de su equipo no se encuentra disponible en stock en este momento. El tiempo estimado de llegada es de aproximadamente [PLAZO]. ¿Desea que procedamos con el pedido del repuesto, o prefiere que exploremos alguna alternativa?",nota:"Frecuente en equipos de marcas específicas o modelos descontinuados. Ofrecer siempre una alternativa si existe."},
+  {id:10,cat:"gestion",nombre:"Falta de repuesto — tiempo de espera",tipo:"Nueva — prioridad media",texto:"Le informamos que el repuesto requerido para la reparación de su equipo no se encuentra disponible en stock en este momento. El tiempo estimado de llegada es de aproximadamente [PLAZO]. ¿Desea que procedamos con el pedido del repuesto, o prefiere que exploremos alguna alternativa?",nota:"Frecuente en equipos de marcas específicas o modelos descontinuados."},
   {id:11,cat:"gestion",nombre:"Seguimiento proactivo sin respuesta",tipo:"Nueva — prioridad media",texto:"Le escribimos para dar seguimiento a la consulta sobre su equipo [MODELO / N° DE ORDEN]. ¿Tuvo oportunidad de revisar el presupuesto que le enviamos? Quedamos a su disposición para aclarar cualquier duda y proceder cuando usted lo indique.",nota:"Usar 48–72 horas después de enviar el presupuesto sin recibir respuesta."},
-  {id:12,cat:"gestion",nombre:"Agradecimiento por espera",tipo:"Existente",texto:"Gracias por su paciencia. Quedamos atentos por si surge alguna otra consulta. ¿Hay algo más en lo que podamos ayudarle?",nota:null},
-  {id:13,cat:"gestion",nombre:"Agradecimiento por espera con enlace",tipo:"Existente",texto:"Gracias por su paciencia. Aquí le dejo el enlace con lo que nos solicitó: [ENLACE]. ¿Hay algo más en lo que podamos ayudarle?",nota:null},
-  {id:14,cat:"resolucion",nombre:"Confirmar envío para garantía",tipo:"Existente",texto:"Por supuesto, puede enviarlo sin problema. Una vez que lo recibamos, lo revisaremos y, si se trata de un defecto de fábrica, quedará cubierto por la garantía.",nota:null},
+  {id:12,cat:"gestion",nombre:"Agradecimiento por espera",tipo:"Existente",texto:"Gracias por su paciencia. Quedamos atentos por si surge alguna otra consulta. ¿Hay algo más en lo que podamos ayudarle?",nota:""},
+  {id:13,cat:"gestion",nombre:"Agradecimiento por espera con enlace",tipo:"Existente",texto:"Gracias por su paciencia. Aquí le dejo el enlace con lo que nos solicitó: [ENLACE]. ¿Hay algo más en lo que podamos ayudarle?",nota:""},
+  {id:14,cat:"resolucion",nombre:"Confirmar envío para garantía",tipo:"Existente",texto:"Por supuesto, puede enviarlo sin problema. Una vez que lo recibamos, lo revisaremos y, si se trata de un defecto de fábrica, quedará cubierto por la garantía.",nota:""},
   {id:15,cat:"resolucion",nombre:"Garantía no aplica — explicación",tipo:"Nueva — prioridad media",texto:"Luego de realizar la revisión técnica del equipo, hemos determinado que el daño encontrado corresponde a [CAUSA]. Este tipo de situación no está cubierta por la garantía del fabricante. Con gusto le detallamos las opciones de reparación disponibles con su respectivo costo.",nota:"Usar tono empático. Evitar lenguaje acusatorio. Siempre ofrecer la alternativa de reparación con costo."},
-  {id:16,cat:"resolucion",nombre:"Equipo listo para retiro o entrega",tipo:"Nueva — alta prioridad",texto:"¡Buenas noticias! Su equipo [MODELO / N° DE ORDEN] ya se encuentra listo. Puede retirarlo en nuestra oficina ubicada en [DIRECCIÓN] en horario [HORARIO], o si lo prefiere, podemos coordinar el envío a su dirección. ¿Cómo le queda mejor?",nota:null},
+  {id:16,cat:"resolucion",nombre:"Equipo listo para retiro o entrega",tipo:"Nueva — alta prioridad",texto:"¡Buenas noticias! Su equipo [MODELO / N° DE ORDEN] ya se encuentra listo. Puede retirarlo en nuestra oficina ubicada en [DIRECCIÓN] en horario [HORARIO], o si lo prefiere, podemos coordinar el envío a su dirección. ¿Cómo le queda mejor?",nota:""},
   {id:17,cat:"resolucion",nombre:"Equipo sin reparación posible",tipo:"Nueva — prioridad media",texto:"Lamentablemente, luego del diagnóstico técnico, hemos determinado que el equipo presenta un daño que no permite una reparación viable. Con gusto le asesoramos sobre las opciones de reposición disponibles.",nota:"Usar tono cálido y empático. Ofrecer siempre una alternativa concreta."},
-  {id:18,cat:"resolucion",nombre:"Solicitud de certificado técnico",tipo:"Nueva — prioridad baja",texto:"Con mucho gusto le emitimos el certificado técnico de la reparación realizada, con el detalle completo del trabajo efectuado y los repuestos utilizados. ¿Nos podría indicar si necesita algún formato específico, o si el certificado es para fines de garantía, auditoría o trámite con su aseguradora?",nota:null},
-  {id:19,cat:"resolucion",nombre:"Transferencia a técnico especializado",tipo:"Nueva — prioridad baja",texto:"Esta consulta requiere la atención de nuestro técnico especializado. Vamos a ponerle en contacto con [NOMBRE / ÁREA] para que pueda asistirle de la mejor manera. Un momento, por favor.",nota:null},
-  {id:20,cat:"cierre",nombre:"Cierre estándar",tipo:"Existente",texto:"Ha sido un placer atenderle. Quedamos a su disposición para cualquier consulta futura. ¡Que tenga un excelente día!",nota:null},
-  {id:21,cat:"cierre",nombre:"Cierre con confirmación",tipo:"Existente",texto:"Ha sido un placer atenderle. Si no tiene ninguna otra consulta, cerramos la conversación por aquí. ¡Que tenga un excelente día, y no dude en escribirnos cuando lo necesite!",nota:null},
-  {id:22,cat:"cierre",nombre:"Cierre por inactividad",tipo:"Existente",texto:"Debido a que no hemos recibido respuesta, vamos a cerrar esta conversación. Si necesita ayuda en el futuro, con gusto le atendemos. ¡Que tenga un buen día!",nota:null},
+  {id:18,cat:"resolucion",nombre:"Solicitud de certificado técnico",tipo:"Nueva — prioridad baja",texto:"Con mucho gusto le emitimos el certificado técnico de la reparación realizada, con el detalle completo del trabajo efectuado y los repuestos utilizados. ¿Nos podría indicar si necesita algún formato específico, o si el certificado es para fines de garantía, auditoría o trámite con su aseguradora?",nota:""},
+  {id:19,cat:"resolucion",nombre:"Transferencia a técnico especializado",tipo:"Nueva — prioridad baja",texto:"Esta consulta requiere la atención de nuestro técnico especializado. Vamos a ponerle en contacto con [NOMBRE / ÁREA] para que pueda asistirle de la mejor manera. Un momento, por favor.",nota:""},
+  {id:20,cat:"cierre",nombre:"Cierre estándar",tipo:"Existente",texto:"Ha sido un placer atenderle. Quedamos a su disposición para cualquier consulta futura. ¡Que tenga un excelente día!",nota:""},
+  {id:21,cat:"cierre",nombre:"Cierre con confirmación",tipo:"Existente",texto:"Ha sido un placer atenderle. Si no tiene ninguna otra consulta, cerramos la conversación por aquí. ¡Que tenga un excelente día, y no dude en escribirnos cuando lo necesite!",nota:""},
+  {id:22,cat:"cierre",nombre:"Cierre por inactividad",tipo:"Existente",texto:"Debido a que no hemos recibido respuesta, vamos a cerrar esta conversación. Si necesita ayuda en el futuro, con gusto le atendemos. ¡Que tenga un buen día!",nota:""},
 ];
 
-/* ── CONFIGURACIÓN ── */
+/* ── CONFIG ── */
 const CAT={
-  todas:        {ey:"Vista general",          tit:"Todas las plantillas",    desc:"Repositorio completo por etapa de conversación.", color:"var(--azulv)",  bar:"#2472CC"},
-  apertura:     {ey:"Etapa 1 — Apertura",     tit:"Apertura",                desc:"Primer contacto. Confianza y disponibilidad.",    color:"var(--A)",     bar:"#1B5AA8"},
-  relevamiento: {ey:"Etapa 2 — Relevamiento", tit:"Relevamiento",            desc:"Diagnóstico remoto y recopilación de datos.",     color:"var(--R)",     bar:"#0E8A5F"},
-  gestion:      {ey:"Etapa 3 — Gestión",      tit:"Gestión en taller",       desc:"Recepción, avances, presupuestos y seguimiento.", color:"var(--G)",     bar:"#B87200"},
-  resolucion:   {ey:"Etapa 4 — Resolución",   tit:"Resolución",              desc:"Garantía, entrega, casos especiales.",           color:"var(--Re)",    bar:"#C03A10"},
-  cierre:       {ey:"Etapa 5 — Cierre",       tit:"Cierre de conversación",  desc:"Finalización adecuada según el tipo de caso.",   color:"var(--C)",     bar:"#5030A0"},
+  todas:        {ey:"Vista general",          tit:"Todas las plantillas",    desc:"Repositorio completo organizado por etapa de conversación.", color:"var(--azulv)", bar:"#2472CC"},
+  apertura:     {ey:"Etapa 1 — Apertura",     tit:"Apertura",                desc:"Primer contacto. Generar confianza y disponibilidad inmediata.", color:"var(--A)",  bar:"#1B5AA8"},
+  relevamiento: {ey:"Etapa 2 — Relevamiento", tit:"Relevamiento",            desc:"Diagnóstico remoto y recopilación de datos técnicos.",         color:"var(--R)",  bar:"#0E7A52"},
+  gestion:      {ey:"Etapa 3 — Gestión",      tit:"Gestión en taller",       desc:"Recepción, avances, presupuestos y seguimiento del proceso.",  color:"var(--G)",  bar:"#A06800"},
+  resolucion:   {ey:"Etapa 4 — Resolución",   tit:"Resolución",              desc:"Garantía, entrega, casos especiales y derivaciones.",          color:"var(--Re)", bar:"#B83010"},
+  cierre:       {ey:"Etapa 5 — Cierre",       tit:"Cierre de conversación",  desc:"Finalización adecuada según el tipo de caso.",                 color:"var(--C)",  bar:"#5030A0"},
 };
-
-/* Tipo de plantilla — tag con color */
 const TIPO={
-  "Existente":               {bg:"#E3F7EF",color:"#0B6040",border:"#7ACFAD",dot:"#0E8A5F"},
-  "Nueva — alta prioridad":  {bg:"#FFF0E8",color:"#7A2000",border:"#F09070",dot:"#C03A10"},
-  "Nueva — prioridad media": {bg:"#FFF5DC",color:"#6B4400",border:"#E8C060",dot:"#B87200"},
-  "Nueva — prioridad baja":  {bg:"#E8F1FF",color:"#1A3A7A",border:"#9ABDE8",dot:"#1B5AA8"},
+  "Existente":               {bg:"#E8F8F2",color:"#0B6040",border:"#6FCFAA",dot:"#0E7A52"},
+  "Nueva — alta prioridad":  {bg:"#FFF0EA",color:"#8A2000",border:"#F09878",dot:"#B83010"},
+  "Nueva — prioridad media": {bg:"#FFF5DC",color:"#705000",border:"#E0B84A",dot:"#A06800"},
+  "Nueva — prioridad baja":  {bg:"#EEF4FF",color:"#1A3A7A",border:"#9ABDE8",dot:"#1B5AA8"},
 };
 
-let cur="todas", curTxt="";
+/* ── ESTADO ── */
+let DATA=[], cur="todas", curTxt="", editId=null, delId=null, verId=null;
+const KEY="sekunet_plantillas_v1";
 
+function load(){
+  try{const s=localStorage.getItem(KEY);DATA=s?JSON.parse(s):[...BASE.map(p=>({...p}))];}
+  catch{DATA=[...BASE.map(p=>({...p}))];}
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(DATA));}catch{}}
+function nextId(){return DATA.length?Math.max(...DATA.map(p=>p.id))+1:1;}
+
+/* ── STATS & CONTADORES ── */
+function updateStats(){
+  const total=DATA.length;
+  const exist=DATA.filter(p=>p.tipo==="Existente").length;
+  document.getElementById('stat-total').textContent=total;
+  document.getElementById('stat-exist').textContent=exist;
+  document.getElementById('stat-new').textContent=total-exist;
+  ['todas','apertura','relevamiento','gestion','resolucion','cierre'].forEach(c=>{
+    const el=document.getElementById('cnt-'+c);
+    if(el)el.textContent=c==='todas'?total:DATA.filter(p=>p.cat===c).length;
+  });
+}
+
+/* ── RENDER ── */
 function render(){
   const q=document.getElementById('si').value.toLowerCase().trim();
-  const g=document.getElementById('gr');
-  g.innerHTML="";
-  let list=cur==="todas"?P:P.filter(p=>p.cat===cur);
+  const g=document.getElementById('gr'); g.innerHTML="";
+  let list=cur==="todas"?DATA:DATA.filter(p=>p.cat===cur);
   if(q)list=list.filter(p=>p.nombre.toLowerCase().includes(q)||p.texto.toLowerCase().includes(q)||p.tipo.toLowerCase().includes(q));
   if(!list.length){
-    g.innerHTML=`<div class="empty"><svg width="44" height="44" fill="none" stroke="var(--A)" stroke-width="1.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><p>Sin resultados para esa búsqueda.</p></div>`;
+    g.innerHTML=`<div class="empty"><svg width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><p>Sin resultados para esa búsqueda.</p></div>`;
     return;
   }
   list.forEach((p,i)=>{
-    const cc=CAT[p.cat], tc=TIPO[p.tipo]||TIPO["Existente"];
-    const d=document.createElement('div');
-    d.className='card';d.style.animationDelay=(i*.038)+'s';
-    d.onclick=()=>openModal(p);
-    // Card: hover border con color de etapa
+    const cc=CAT[p.cat]||CAT.todas, tc=TIPO[p.tipo]||TIPO["Existente"];
+    const d=document.createElement('div'); d.className='card'; d.style.animationDelay=(i*.035)+'s';
     d.addEventListener('mouseenter',()=>d.style.borderColor=cc.bar);
     d.addEventListener('mouseleave',()=>d.style.borderColor='');
     d.innerHTML=`
       <div class="cbar" style="background:${cc.bar}"></div>
       <div class="cbody">
         <span class="ctag" style="background:${tc.bg};color:${tc.color};border:1.5px solid ${tc.border}">
-          <span style="width:6px;height:6px;border-radius:50%;background:${tc.dot};display:inline-block;flex-shrink:0"></span>
-          ${p.tipo}
+          <span style="width:7px;height:7px;border-radius:50%;background:${tc.dot};display:inline-block;flex-shrink:0"></span>${p.tipo}
         </span>
-        <div class="cnm" style="color:${cc.bar}">${p.nombre}</div>
-        <div class="cpv" style="color:${cc.bar}">${p.texto}</div>
+        <div class="cnm">${p.nombre}</div>
+        <div class="cpv">${p.texto}</div>
       </div>
       <div class="cfoot" style="background:${cc.bar}0D">
         <span class="cet" style="color:${cc.bar}">${cc.ey}</span>
-        <button class="ccp" style="color:${cc.bar};border-color:${cc.bar}40"
-          onclick="event.stopPropagation();qcp(this,\`${e(p.texto)}\`,\`${cc.bar}\`)">
-          <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-          Copiar
-        </button>
+        <div class="cacts">
+          <button class="cact cact-copy" style="color:${cc.bar};border-color:${cc.bar}50"
+            onclick="event.stopPropagation();quickCopy(this,'${esc(p.texto)}','${cc.bar}')">
+            <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar
+          </button>
+          <button class="cact cact-edit"
+            onclick="event.stopPropagation();openEdit(${p.id})">
+            <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar
+          </button>
+          <button class="cact cact-del"
+            onclick="event.stopPropagation();openDel(${p.id})">
+            <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg>Borrar
+          </button>
+        </div>
       </div>`;
+    d.querySelector('.cbody').addEventListener('click',()=>openVer(p.id));
     g.appendChild(d);
   });
 }
 
-function e(s){return s.replace(/\\/g,'\\\\').replace(/`/g,'\\`').replace(/\$/g,'\\$')}
+function esc(s){return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,'\\n')}
 
+/* ── CATEGORÍA ── */
 function setCat(cat,btn){
   cur=cat;
-  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
   const cc=CAT[cat];
-  ['ey','ctit','cdesc'].forEach(id=>{
-    document.getElementById(id).style.color=cc.color;
-  });
+  ['ey','ctit'].forEach(id=>{document.getElementById(id).style.color=cc.color;});
   document.getElementById('ey').textContent=cc.ey;
   document.getElementById('ctit').textContent=cc.tit;
   document.getElementById('cdesc').textContent=cc.desc;
+  // Botón nueva: color de etapa
+  const bn=document.getElementById('btn-new');
+  bn.style.background=cc.bar;
   document.getElementById('si').value="";
   render();
 }
 
-function openModal(p){
-  const cc=CAT[p.cat];
-  document.getElementById('mey').textContent=cc.ey;
-  document.getElementById('mey').style.color=cc.bar;
-  document.getElementById('mtt').textContent=p.nombre;
-  document.getElementById('mtt').style.color=cc.bar;
-  document.getElementById('mfl').textContent="Texto de la plantilla";
-  document.getElementById('mfl').style.color=cc.bar;
-  document.getElementById('mft').textContent=p.texto;
-  const n=document.getElementById('mfn');
-  n.textContent=p.nota?"💡 "+p.nota:"";
-  n.classList.toggle('on',!!p.nota);
-  const b=document.getElementById('mcp');
-  b.style.background=cc.bar;b.style.color="#fff";
-  b.classList.remove('ok');
-  b.innerHTML=`<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copiar texto`;
+/* ── MODAL HELPERS ── */
+function openOv(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeOv(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+function closeOut(e,id){if(e.target===document.getElementById(id))closeOv(id);}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){['ov-ver','ov-form','ov-del'].forEach(closeOv);}});
+
+/* ── MODAL VER ── */
+function openVer(id){
+  const p=DATA.find(x=>x.id===id); if(!p)return;
+  verId=id;
+  const cc=CAT[p.cat]||CAT.todas;
+  document.getElementById('ver-ey').textContent=cc.ey;
+  document.getElementById('ver-ey').style.color=cc.bar;
+  document.getElementById('ver-tt').textContent=p.nombre;
+  document.getElementById('ver-tt').style.color=cc.bar;
+  document.getElementById('ver-txt').textContent=p.texto;
+  const n=document.getElementById('ver-nota');
+  n.textContent=p.nota?"💡 "+p.nota:""; n.classList.toggle('on',!!p.nota);
+  document.getElementById('ver-copy').style.background=cc.bar;
   curTxt=p.texto;
-  document.getElementById('ov').classList.add('open');
-  document.body.style.overflow='hidden';
+  openOv('ov-ver');
 }
-function closeModal(){document.getElementById('ov').classList.remove('open');document.body.style.overflow='';}
-function closeOut(ev){if(ev.target===document.getElementById('ov'))closeModal();}
-document.addEventListener('keydown',ev=>{if(ev.key==='Escape')closeModal();});
+function openEditFromVer(){closeOv('ov-ver');openEdit(verId);}
 
+/* ── COPIAR ── */
 function cp(t){if(navigator.clipboard)navigator.clipboard.writeText(t);else{const x=document.createElement('textarea');x.value=t;x.style.cssText='position:fixed;opacity:0';document.body.appendChild(x);x.select();document.execCommand('copy');document.body.removeChild(x);}}
-function showToast(){const t=document.getElementById('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200);}
-
-function qcp(btn,txt,color){
-  cp(txt);
+function showToast(msg){const t=document.getElementById('toast');document.getElementById('toast-msg').textContent=msg;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200);}
+function quickCopy(btn,txt,color){
+  cp(txt.replace(/\\n/g,'\n'));
   const prev=btn.innerHTML;
   btn.style.background=color;btn.style.color='#fff';btn.style.borderColor=color;
   btn.innerHTML=`<svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>¡Listo!`;
-  setTimeout(()=>{btn.style.background='';btn.style.color=color;btn.style.borderColor=color+'40';btn.innerHTML=prev;},2000);
-  showToast();
+  setTimeout(()=>{btn.style.background='';btn.style.color=color;btn.style.borderColor=color+'50';btn.innerHTML=prev;},2000);
+  showToast("Plantilla copiada al portapapeles");
 }
-function copyModal(){
+function copyVer(){
   cp(curTxt);
-  const b=document.getElementById('mcp');
-  const prev=b.innerHTML;b.innerHTML=`<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> ¡Copiado!`;
+  const b=document.getElementById('ver-copy');
+  const prev=b.innerHTML;
+  b.innerHTML=`<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> ¡Copiado!`;
   setTimeout(()=>{b.innerHTML=prev;},2000);
-  showToast();
+  showToast("Plantilla copiada al portapapeles");
 }
 
-render();
+/* ── MODAL CREAR ── */
+function openCreate(){
+  editId=null;
+  document.getElementById('form-ey').textContent="Nueva plantilla";
+  document.getElementById('form-tt').textContent="Crear plantilla";
+  document.getElementById('f-nombre').value="";
+  document.getElementById('f-cat').value=cur==="todas"?"apertura":cur;
+  document.getElementById('f-texto').value="";
+  document.getElementById('f-nota').value="";
+  document.querySelector('input[name="f-tipo"][value="Existente"]').checked=true;
+  hideFormError();
+  openOv('ov-form');
+  setTimeout(()=>document.getElementById('f-nombre').focus(),200);
+}
+
+/* ── MODAL EDITAR ── */
+function openEdit(id){
+  const p=DATA.find(x=>x.id===id); if(!p)return;
+  editId=id;
+  const cc=CAT[p.cat]||CAT.todas;
+  document.getElementById('form-ey').textContent="Editar plantilla · "+cc.ey;
+  document.getElementById('form-ey').style.color=cc.bar;
+  document.getElementById('form-tt').textContent=p.nombre;
+  document.getElementById('form-tt').style.color=cc.bar;
+  document.getElementById('f-nombre').value=p.nombre;
+  document.getElementById('f-cat').value=p.cat;
+  document.getElementById('f-texto').value=p.texto;
+  document.getElementById('f-nota').value=p.nota||"";
+  const rb=document.querySelector(`input[name="f-tipo"][value="${p.tipo}"]`);
+  if(rb)rb.checked=true; else document.querySelector('input[name="f-tipo"]').checked=true;
+  hideFormError();
+  openOv('ov-form');
+  setTimeout(()=>document.getElementById('f-nombre').focus(),200);
+}
+
+/* ── GUARDAR ── */
+function saveForm(){
+  const nombre=document.getElementById('f-nombre').value.trim();
+  const texto=document.getElementById('f-texto').value.trim();
+  const cat=document.getElementById('f-cat').value;
+  const tipo=document.querySelector('input[name="f-tipo"]:checked').value;
+  const nota=document.getElementById('f-nota').value.trim();
+  if(!nombre){showFormError("El nombre de la plantilla es obligatorio.");return;}
+  if(!texto){showFormError("El texto de la plantilla no puede estar vacío.");return;}
+  if(editId){
+    const idx=DATA.findIndex(p=>p.id===editId);
+    if(idx>-1){DATA[idx]={...DATA[idx],nombre,cat,tipo,texto,nota};}
+    showToast("Plantilla actualizada correctamente");
+  } else {
+    DATA.push({id:nextId(),cat,nombre,tipo,texto,nota});
+    showToast("Plantilla creada exitosamente");
+  }
+  save(); updateStats(); closeOv('ov-form'); render();
+}
+function showFormError(msg){const e=document.getElementById('f-error');e.style.display='block';e.querySelector('div').textContent=msg;}
+function hideFormError(){const e=document.getElementById('f-error');e.style.display='none';}
+
+/* ── MODAL BORRAR ── */
+function openDel(id){
+  const p=DATA.find(x=>x.id===id); if(!p)return;
+  delId=id;
+  document.getElementById('del-name').textContent='"'+p.nombre+'"';
+  openOv('ov-del');
+}
+function confirmDel(){
+  DATA=DATA.filter(p=>p.id!==delId);
+  save(); updateStats(); closeOv('ov-del'); render();
+  showToast("Plantilla eliminada");
+}
+
+/* ── INIT ── */
+load(); updateStats();
+setCat('todas',document.querySelector('.nb[data-cat="todas"]'));
 </script>
 </body>
 </html>
